@@ -3,366 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cascarino's Pizzeria - Authentic New York Pizza made fresh daily in Manhattan. Award-winning pizzeria with wood-fired pizzas, fresh ingredients, and exceptional service.">
-    <meta name="keywords" content="New York pizza, authentic pizza, Manhattan pizzeria, wood-fired pizza, Italian cuisine">
-    <meta name="author" content="Cascarino's Pizzeria">
-    <meta property="og:title" content="Cascarino's Pizzeria - Authentic New York Pizza">
-    <meta property="og:description" content="Experience authentic New York pizza made fresh daily at Cascarino's.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=1200&h=630&fit=crop">
-    <meta property="og:url" content="https://cascarinospizzeria.com">
-    <meta name="theme-color" content="#1a1a1a">
-    <title>Cascarino's Pizzeria - Authentic New York Pizza</title>
+    <meta name="description" content="Cascarino's Brick Oven Pizzeria & Ristorante in Whitestone Plaza. Brick oven pizza, classic Italian entrees, and warm hospitality.">
+    <meta name="theme-color" content="#0A0A0A">
+    <title>Cascarino's Brick Oven Pizzeria & Ristorante</title>
+
+    <!-- Typography: elegant serif + modern sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-accent">C</span>ascarino's
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <header class="site-header" id="header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="brand" href="#home">Cascarino's</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#menu" class="nav-link">Menu</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#reviews" class="nav-link">Reviews</a></li>
-                <li><a href="#location" class="nav-link">Location</a></li>
-                <li><a href="tel:+12125551234" class="nav-link nav-cta">212-555-1234</a></li>
+
+            <ul class="nav-links" id="desktopMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Authentic New York Pizza<br><span class="accent-text">Made Fresh Daily</span></h1>
-            <p class="hero-subtitle">Family-owned pizzeria in Manhattan since 1989. Award-winning wood-fired pizzas with premium, locally-sourced ingredients.</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">View Menu</a>
-                <a href="tel:+12125551234" class="btn btn-secondary">Order Online</a>
-            </div>
-        </div>
-        <div class="hero-overlay"></div>
-        <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=1920&h=1080&fit=crop" alt="Authentic wood-fired pizza" class="hero-image">
-    </section>
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
 
-    <!-- Featured Signature Section -->
-    <section class="featured" id="featured">
-        <div class="featured-container">
-            <div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=600&fit=crop" alt="Cascarino's Signature Focaccia with Truffle Oil">
-            </div>
-            <div class="featured-content">
-                <h2 class="section-title">Our Signature Specialty</h2>
-                <h3 class="featured-name">Focaccia al Tartufo</h3>
-                <p class="featured-description">
-                    Elevate your meal with our signature Focaccia, a Cascarino family recipe passed down for three generations. Topped with premium Italian truffle oil, rosemary, fleur de sel, and a drizzle of aged balsamic. Each piece is hand-stretched and baked in our wood-fired oven at 900°F.
-                </p>
-                <ul class="featured-highlights">
-                    <li><strong>Premium Truffle Oil:</strong> Imported from Piedmont, Italy</li>
-                    <li><strong>Hand-Stretched:</strong> Fresh daily, never frozen</li>
-                    <li><strong>Wood-Fired:</strong> Traditional 900°F oven</li>
-                    <li><strong>Perfect For:</strong> Starters, sides, or a meal on its own</li>
-                </ul>
-                <a href="#menu" class="btn btn-primary">Add to Order</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Preview Section -->
-    <section class="menu-preview" id="menu">
-        <div class="container">
-            <h2 class="section-title">Our Menu</h2>
-            <p class="section-subtitle">Authentic Italian cuisine, crafted with passion and premium ingredients</p>
-            <div class="menu-grid">
-                <div class="menu-card">
-                    <div class="menu-icon">🍕</div>
-                    <h3>Pizza</h3>
-                    <p>Classic Neapolitan and New York style pizzas, wood-fired to perfection. From traditional Margherita to our signature creations.</p>
-                    <a href="#" class="card-link">View Pizza Menu →</a>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-icon">🍝</div>
-                    <h3>Pasta</h3>
-                    <p>Handmade fresh pasta daily. Traditional Italian recipes featuring imported sauces and local proteins.</p>
-                    <a href="#" class="card-link">View Pasta Menu →</a>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-icon">🥗</div>
-                    <h3>Salads</h3>
-                    <p>Fresh seasonal salads featuring organic greens, imported cheeses, and house-made vinaigrettes.</p>
-                    <a href="#" class="card-link">View Salads →</a>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-icon">🎉</div>
-                    <h3>Catering</h3>
-                    <p>Perfect for events, meetings, and celebrations. Custom menus available for groups of any size.</p>
-                    <a href="#" class="card-link">Catering Inquiries →</a>
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home" aria-label="Hero">
+            <div class="hero-backdrop" aria-hidden="true"></div>
+            <div class="hero-content">
+                <p class="hero-kicker hero-stagger">Whitestone Plaza</p>
+                <h1 class="hero-title hero-stagger">Cascarino&rsquo;s</h1>
+                <p class="hero-subtitle hero-stagger">Brick Oven Pizza. Classic Italian. Done Right.</p>
+                <div class="hero-actions hero-stagger">
+                    <a class="btn btn-primary" href="#menu">View Menu</a>
+                    <a class="btn btn-ghost" href="tel:+17187464370">Call Now</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">Our Story</h2>
-                <div class="about-text">
+        <!-- Signature Dishes -->
+        <section class="section section-dishes reveal-group" id="dishes">
+            <div class="section-head reveal">
+                <p class="eyebrow">Signature Dishes</p>
+                <h2>From the Brick Oven to the Table</h2>
+            </div>
+            <div class="dish-grid">
+                <article class="dish-card reveal">
+                    <div class="dish-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1548365328-9f547fb0953a?auto=format&fit=crop&w=1200&q=80" alt="Wood-fired pizza fresh from the oven" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Brick Oven Pizza</h3>
+                </article>
+
+                <article class="dish-card reveal">
+                    <div class="dish-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=80" alt="Classic Italian pasta and entree presentation" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Classic Italian Entrees</h3>
+                </article>
+
+                <article class="dish-card reveal">
+                    <div class="dish-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=80" alt="Fresh ingredients prepared for Italian cooking" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Fresh Ingredients, Real Flavor</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section section-about" id="about">
+            <div class="about-grid">
+                <div class="about-copy reveal">
+                    <p class="eyebrow">About Cascarino's</p>
+                    <h2>Warm Hospitality, Bold Flavor</h2>
                     <p>
-                        Cascarino's Pizzeria was founded in 1989 by Giuseppe and Maria Cascarino, who brought their family's traditional pizza recipes from Naples, Italy to the heart of Manhattan. What started as a small neighborhood pizzeria has grown into a beloved NYC institution, but our commitment to authenticity and quality has never wavered.
-                    </p>
-                    <p>
-                        Every pizza that leaves our wood-fired oven is crafted with the same attention to detail, passion, and pride that Giuseppe instilled in our recipes decades ago. We source only the finest Italian ingredients, including San Marzano tomatoes, buffalo mozzarella, and imported oils. Our dough is prepared daily using traditional methods—never rushed, never compromised.
-                    </p>
-                    <p>
-                        Today, Cascarino's remains a family-run business, with the third generation continuing the legacy. We're not just serving pizza; we're sharing a piece of Italian culture, one authentic experience at a time.
+                        At Cascarino&rsquo;s, we bring together traditional Italian cooking and the bold flavor of a wood-burning brick oven.
+                        From handcrafted pizzas to classic entrees, every dish is made fresh and served with care.
                     </p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <div class="stat-number">35+</div>
-                        <div class="stat-label">Years of Excellence</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">10K+</div>
-                        <div class="stat-label">Happy Customers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Fresh Ingredients</div>
-                    </div>
-                </div>
+                <figure class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Elegant Italian dining setting" loading="lazy" decoding="async">
+                </figure>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews" id="reviews">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
+        <!-- Experience -->
+        <section class="section section-experience" id="experience">
+            <div class="section-head reveal">
+                <p class="eyebrow">The Experience</p>
+                <h2>Simple, Honest, Memorable</h2>
+            </div>
+            <div class="experience-grid">
+                <article class="experience-card reveal">
+                    <h3>Wood-Burning Oven</h3>
+                    <p>High-heat fire, crisp crust, and unmistakable flavor in every pie.</p>
+                </article>
+                <article class="experience-card reveal">
+                    <h3>Family Friendly</h3>
+                    <p>Casual and welcoming atmosphere for lunch, dinner, and everything between.</p>
+                </article>
+                <article class="experience-card reveal">
+                    <h3>Fresh &amp; Made Daily</h3>
+                    <p>Prepared with care every day using quality ingredients and classic technique.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Menu Preview -->
+        <section class="section section-menu" id="menu">
+            <div class="section-head reveal">
+                <p class="eyebrow">Menu Preview</p>
+                <h2>Favorites at a Glance</h2>
+            </div>
+            <div class="menu-preview reveal">
+                <div class="menu-item"><span>Margherita Pizza</span></div>
+                <div class="menu-item"><span>Pepperoni Pizza</span></div>
+                <div class="menu-item"><span>Chicken Parmigiana</span></div>
+                <div class="menu-item"><span>Pasta Alfredo</span></div>
+            </div>
+            <div class="menu-cta reveal">
+                <a class="btn btn-primary" href="#contact">View Full Menu</a>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="section section-reviews" id="reviews">
+            <div class="section-head reveal">
+                <p class="eyebrow">Reviews</p>
+                <h2>What Guests Are Saying</h2>
+            </div>
+
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="review-text">"Hands down the best pizza in Manhattan. The crust is perfection, the ingredients are premium, and the service is impeccable. We've been coming here for years and it never disappoints."</p>
-                    <div class="review-author">
-                        <strong>Sarah Mitchell</strong>
-                        <span class="review-date">Verified Customer</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="review-text">"Finally found authentic Neapolitan pizza in NYC. The wood-fired oven brings out incredible flavors. The Focaccia al Tartufo was extraordinary. Highly recommend!"</p>
-                    <div class="review-author">
-                        <strong>Marco Rossi</strong>
-                        <span class="review-date">Verified Customer</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="review-text">"Whether it's for a quick lunch or a special celebration, Cascarino's always delivers exceptional food and service. The team genuinely cares about their customers. True Italian hospitality!"</p>
-                    <div class="review-author">
-                        <strong>Jessica Chen</strong>
-                        <span class="review-date">Verified Customer</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="review-text">"We catered our wedding through Cascarino's and it was absolutely perfect. The attention to detail, quality of food, and professionalism of the team exceeded all expectations."</p>
-                    <div class="review-author">
-                        <strong>David & Emma Thompson</strong>
-                        <span class="review-date">Verified Customer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <article class="review-card reveal">
+                    <h3>Jimmy Dasher</h3>
+                    <p>"Real New York pizza 10/10"</p>
+                </article>
 
-    <!-- Location & Hours Section -->
-    <section class="location" id="location">
-        <div class="container">
-            <h2 class="section-title">Visit Us</h2>
-            <div class="location-content">
-                <div class="location-info">
-                    <div class="info-block">
-                        <h3>Address</h3>
-                        <p>
-                            <a href="https://maps.google.com/?q=123+Mulberry+Street,+New+York,+NY+10012" target="_blank" rel="noopener noreferrer">
-                                123 Mulberry Street<br>
-                                New York, NY 10012<br>
-                                Little Italy
-                            </a>
-                        </p>
-                    </div>
-                    <div class="info-block">
-                        <h3>Hours</h3>
-                        <ul class="hours-list">
-                            <li><span>Monday - Thursday:</span> <span>11:00 AM - 11:00 PM</span></li>
-                            <li><span>Friday - Saturday:</span> <span>11:00 AM - 12:00 AM</span></li>
-                            <li><span>Sunday:</span> <span>12:00 PM - 11:00 PM</span></li>
-                        </ul>
-                    </div>
-                    <div class="info-block">
-                        <h3>Contact</h3>
-                        <p>
-                            <a href="tel:+12125551234" class="contact-phone">212-555-1234</a><br>
-                            <a href="mailto:info@cascarinospizzeria.com" class="contact-email">info@cascarinospizzeria.com</a>
-                        </p>
-                    </div>
-                    <div class="info-block">
-                        <h3>Order Online</h3>
-                        <p>
-                            <a href="#" class="btn btn-secondary">Grubhub</a>
-                            <a href="#" class="btn btn-secondary">DoorDash</a>
-                            <a href="#" class="btn btn-secondary">Uber Eats</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1852534375806!2d-73.99796592346922!3d40.71620571105883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316e2e3c9f%3A0x1e0e1e0e1e0e1e0e!2s123%20Mulberry%20St%2C%20New%20York%2C%20NY%2010012!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Cascarino's Pizzeria location on Mulberry Street"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+                <article class="review-card reveal">
+                    <h3>Sandra Tiberi</h3>
+                    <p>"New owners!! Super friendly, food always fresh, delicious and hot. I highly recommend."</p>
+                </article>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Cascarino's Pizzeria</h4>
-                    <p>Authentic New York pizza since 1989. Family-owned, locally-loved.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Twitter">𝕏</a>
+                <article class="review-card reveal">
+                    <h3>Stephen Hatzis</h3>
+                    <p>"My go to spot for chicken dishes and such! Great dishes!"</p>
+                </article>
+
+                <article class="review-card reveal">
+                    <h3>Teresa</h3>
+                    <p>"I had ordered through GrubHub last night during a storm and I didn&rsquo;t realize how bad the flooding had been (totally my fault). The driver took 3 hours to deliver the food and while waiting, someone at the restaurant called twice to offer to deliver the food themselves. It was a kind gesture that was offered and much appreciated. I ended up giving the food to my neighbor who has two teenage boys because they got so excited when they heard I had ordered from Cascarino&rsquo;s. Will definitely be ordering from them again. This time when the weather is better! 😂"</p>
+                </article>
+
+                <article class="review-card reveal">
+                    <h3>john vira</h3>
+                    <p>"Great selection of slices."</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact / CTA -->
+        <section class="section section-contact" id="contact">
+            <div class="contact-wrap reveal">
+                <div class="contact-copy">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Visit Us Tonight</h2>
+                    <address>
+                        Cascarino's Brick Oven Pizzeria &amp; Ristorante<br>
+                        152-59 10th Ave, Whitestone, NY 11357
+                    </address>
+                    <p><a href="tel:+17187464370">(718) 746-4370</a></p>
+                    <p>Hours: Tuesday-Sunday 11 AM - 9 PM | Monday 11 AM - 9 PM</p>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=152-59+10th+Ave%2C+Whitestone%2C+NY+11357">Get Directions</a>
+                        <a class="btn btn-ghost" href="tel:+17187464370">Call Now</a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#location">Location</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Order Online</h4>
-                    <ul>
-                        <li><a href="#">Grubhub</a></li>
-                        <li><a href="#">DoorDash</a></li>
-                        <li><a href="#">Uber Eats</a></li>
-                        <li><a href="#">Phone Order</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>
-                        <a href="tel:+12125551234">212-555-1234</a><br>
-                        <a href="mailto:info@cascarinospizzeria.com">info@cascarinospizzeria.com</a><br>
-                        123 Mulberry Street<br>
-                        New York, NY 10012
-                    </p>
+                <div class="contact-map" aria-label="Map location">
+                    <iframe
+                        title="Cascarino's Whitestone Location"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=152-59+10th+Ave,+Whitestone,+NY+11357&output=embed">
+                    </iframe>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Cascarino's Pizzeria. All rights reserved.</p>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Accessibility</a></li>
-                </ul>
-            </div>
-        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Cascarino's Brick Oven Pizzeria &amp; Ristorante</p>
+        <p>152-59 10th Ave, Whitestone, NY 11357</p>
+        <p>(718) 746-4370</p>
+        <p>Tuesday-Sunday: 11 AM - 9 PM | Monday: 11 AM - 9 PM</p>
     </footer>
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Restaurant",
-        "name": "Cascarino's Pizzeria",
-        "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=1200&h=630&fit=crop",
-        "description": "Authentic New York pizza made fresh daily. Family-owned pizzeria in Manhattan since 1989.",
-        "url": "https://cascarinospizzeria.com",
-        "telephone": "+12125551234",
-        "email": "info@cascarinospizzeria.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Mulberry Street",
-            "addressLocality": "New York",
-            "addressRegion": "NY",
-            "postalCode": "10012",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "40.7162",
-            "longitude": "-73.9980"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-                "opens": "11:00",
-                "closes": "23:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Friday", "Saturday"],
-                "opens": "11:00",
-                "closes": "00:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Sunday",
-                "opens": "12:00",
-                "closes": "23:00"
-            }
-        ],
-        "priceRange": "$$",
-        "cuisine": ["Italian", "Pizza"],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "1250"
-        },
-        "sameAs": [
-            "https://www.facebook.com/cascarinospizzeria",
-            "https://www.instagram.com/cascarinospizzeria",
-            "https://www.google.com/maps/place/123+Mulberry+Street"
-        ]
-    }
-    </script>
 
     <script src="script.js"></script>
 </body>
