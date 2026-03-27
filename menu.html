@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cascarino's Full Menu - Brick Oven Pizza, Italian Entrees, and Fresh Appetizers in Whitestone.">
+    <meta name="theme-color" content="#0A0A0A">
+    <title>Menu - Cascarino's Brick Oven Pizzeria & Ristorante</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page {
+            min-height: calc(100vh - 76px);
+            padding: var(--space-xl) 0;
+        }
+        
+        .menu-page-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .menu-page-hero {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .menu-page-subtitle {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+        
+        .menu-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 min(2rem, 4vw);
+        }
+        
+        .menu-section {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .menu-section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(1.6rem, 3vw, 2rem);
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .menu-section-items {
+            display: grid;
+            gap: 1.2rem;
+        }
+        
+        .menu-dish {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+        }
+        
+        .menu-dish:last-child {
+            border-bottom: 0;
+        }
+        
+        .menu-dish-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .menu-dish-name {
+            font-family: "Playfair Display", serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            flex: 1;
+        }
+        
+        .menu-dish-price {
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+        
+        .menu-dish-desc {
+            color: rgba(245, 241, 232, 0.65);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .menu-note-section {
+            background: rgba(194, 165, 109, 0.08);
+            border: 1px solid rgba(194, 165, 109, 0.2);
+            border-radius: var(--radius);
+            padding: 1.4rem;
+            margin-top: var(--space-xl);
+            text-align: center;
+        }
+        
+        .menu-note-section p {
+            margin: 0.3rem 0;
+        }
+        
+        .menu-cta-section {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding-top: var(--space-l);
+            border-top: 1px solid var(--line);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+            margin-bottom: var(--space-l);
+        }
+        
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="brand" href="index.html">Cascarino's</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="desktopMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Full Menu</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <main class="menu-page">
+        <div class="menu-container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            
+            <div class="menu-page-header">
+                <h1 class="menu-page-hero">Our Menu</h1>
+                <p class="menu-page-subtitle">Crafted with passion, made with heart</p>
+            </div>
+
+            <!-- Signature Pizzas -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Signature Pizzas</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Margherita</span>
+                            <span class="menu-dish-price">$14 | $18 Large</span>
+                        </div>
+                        <p class="menu-dish-desc">Fresh mozzarella, basil, tomato sauce, and a touch of olive oil</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Pepperoni</span>
+                            <span class="menu-dish-price">$15 | $20 Large</span>
+                        </div>
+                        <p class="menu-dish-desc">Classic pepperoni with ample cheese and our signature tomato sauce</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">The Cascarino Special</span>
+                            <span class="menu-dish-price">$18 | $24 Large</span>
+                        </div>
+                        <p class="menu-dish-desc">Sausage, pepperoni, mozzarella, fresh basil, and caramelized onions</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Veggie Delight</span>
+                            <span class="menu-dish-price">$16 | $21 Large</span>
+                        </div>
+                        <p class="menu-dish-desc">Roasted peppers, mushrooms, olives, and fresh seasonal vegetables</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Quattro Formaggi</span>
+                            <span class="menu-dish-price">$17 | $23 Large</span>
+                        </div>
+                        <p class="menu-dish-desc">A blend of mozzarella, ricotta, pecorino, and gorgonzola cheeses</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pasta & Entrees -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Pasta & Entrees</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Chicken Parmigiana</span>
+                            <span class="menu-dish-price">$17</span>
+                        </div>
+                        <p class="menu-dish-desc">Breaded chicken filet layered with marinara sauce and melted mozzarella</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Eggplant Rollatine</span>
+                            <span class="menu-dish-price">$16</span>
+                        </div>
+                        <p class="menu-dish-desc">Breaded eggplant rolled with ricotta and herbs, baked in marinara sauce</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Fettuccine Alfredo</span>
+                            <span class="menu-dish-price">$15</span>
+                        </div>
+                        <p class="menu-dish-desc">Creamy Alfredo sauce with fresh fettuccine and Parmigiano-Reggiano</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Lasagna Bolognese</span>
+                            <span class="menu-dish-price">$16</span>
+                        </div>
+                        <p class="menu-dish-desc">Layered pasta with rich ground beef sauce and creamy béchamel</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Shrimp Scampi</span>
+                            <span class="menu-dish-price">$19</span>
+                        </div>
+                        <p class="menu-dish-desc">Fresh shrimp sautéed in garlic, white wine, and lemon butter over pasta</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Veal Saltimbocca</span>
+                            <span class="menu-dish-price">$21</span>
+                        </div>
+                        <p class="menu-dish-desc">Tender veal topped with prosciutto and sage in white wine sauce</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appetizers & Starters -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Appetizers & Starters</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Garlic Bread</span>
+                            <span class="menu-dish-price">$6</span>
+                        </div>
+                        <p class="menu-dish-desc">Crispy Italian bread brushed with garlic, olive oil, and fresh herbs</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Mozzarella Sticks</span>
+                            <span class="menu-dish-price">$9</span>
+                        </div>
+                        <p class="menu-dish-desc">Golden fried mozzarella served with marinara sauce</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Calamari Fritti</span>
+                            <span class="menu-dish-price">$12</span>
+                        </div>
+                        <p class="menu-dish-desc">Tender calamari fried until golden, served with lemon aioli</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Bruschetta</span>
+                            <span class="menu-dish-price">$8</span>
+                        </div>
+                        <p class="menu-dish-desc">Toasted bread topped with tomatoes, garlic, basil, and olive oil</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Caprese Salad</span>
+                            <span class="menu-dish-price">$10</span>
+                        </div>
+                        <p class="menu-dish-desc">Fresh mozzarella, ripe tomatoes, basil, and balsamic reduction</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Salads -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Salads</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Classic Caesar</span>
+                            <span class="menu-dish-price">$11</span>
+                        </div>
+                        <p class="menu-dish-desc">Romaine lettuce, Parmigiano-Reggiano, croutons, and housemade Caesar dressing</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Garden Salad</span>
+                            <span class="menu-dish-price">$10</span>
+                        </div>
+                        <p class="menu-dish-desc">Mixed greens with seasonal vegetables and choice of dressing</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Insalata Italiana</span>
+                            <span class="menu-dish-price">$13</span>
+                        </div>
+                        <p class="menu-dish-desc">Mixed greens, prosciutto, fresh mozzarella, tomatoes, and Italian vinaigrette</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Desserts</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Tiramisu</span>
+                            <span class="menu-dish-price">$7</span>
+                        </div>
+                        <p class="menu-dish-desc">Classic Italian dessert with espresso, mascarpone, and cocoa</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Panna Cotta</span>
+                            <span class="menu-dish-price">$7</span>
+                        </div>
+                        <p class="menu-dish-desc">Silky smooth Italian cream dessert with berry compote</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Spumoni Ice Cream</span>
+                            <span class="menu-dish-price">$6</span>
+                        </div>
+                        <p class="menu-dish-desc">Traditional three-flavor Italian ice cream</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Beverages -->
+            <section class="menu-section">
+                <h2 class="menu-section-title">Beverages</h2>
+                <div class="menu-section-items">
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Soft Drinks</span>
+                            <span class="menu-dish-price">$3</span>
+                        </div>
+                        <p class="menu-dish-desc">Coca-Cola products, bottled water, and Italian sodas</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Coffee & Espresso</span>
+                            <span class="menu-dish-price">$3-5</span>
+                        </div>
+                        <p class="menu-dish-desc">Freshly brewed Italian espresso and cappuccino</p>
+                    </div>
+                    <div class="menu-dish">
+                        <div class="menu-dish-header">
+                            <span class="menu-dish-name">Wine Selection</span>
+                            <span class="menu-dish-price">Ask server</span>
+                        </div>
+                        <p class="menu-dish-desc">Curated Italian wines by the glass or bottle</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menu-note-section">
+                <p><strong>Still deciding? Let us help!</strong></p>
+                <p>Call us at (718) 746-4370 to ask about our specials of the day.</p>
+                <p>All dishes available for dine-in, takeout, and delivery.</p>
+            </div>
+
+            <div class="menu-cta-section">
+                <a class="btn btn-primary" href="index.html#contact">Order Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Cascarino's Brick Oven Pizzeria &amp; Ristorante</p>
+        <p>152-59 10th Ave, Whitestone, NY 11357</p>
+        <p>(718) 746-4370</p>
+        <p>Tuesday-Sunday: 11 AM - 9 PM | Monday: 11 AM - 9 PM</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
