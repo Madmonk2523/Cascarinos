@@ -223,7 +223,7 @@ address {
     inset: -15%;
     z-index: -1;
     background:
-        url('background.jpg') center / 250% no-repeat;
+        url('background.jpg') center / 400% no-repeat;
     filter: brightness(0.88) contrast(1.12) saturate(1.08);
     animation: heroShift 16s ease infinite;
     transform: translateY(calc(var(--parallax-shift) * 0.18));
