@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Cascarino's Brick Oven Pizzeria | Whitestone, NY</title>
     <meta name="description" content="Cascarino's Brick Oven Pizzeria in Whitestone, NY. Explore our full menu, reviews, gallery, and location details for dine-in, takeout, and delivery.">
     <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
@@ -164,11 +164,35 @@
             <div class="panel-inner">
                 <p class="kicker">Guest Reviews</p>
                 <h2 id="reviews-title">What People Say About Cascarino's</h2>
-                <div class="review-grid" aria-label="Customer reviews">
-                    <article class="review-card"><p>"Real New York pizza, always on point."</p><h3>Jimmy D.</h3></article>
-                    <article class="review-card"><p>"Super friendly team and the food is always fresh, hot, and delicious."</p><h3>Sandra T.</h3></article>
-                    <article class="review-card"><p>"My go-to spot for chicken dishes and family dinners."</p><h3>Stephen H.</h3></article>
-                    <article class="review-card"><p>"Great service and great slices. Highly recommended for takeout night."</p><h3>John V.</h3></article>
+                <div class="reviews-carousel" id="reviewsCarousel" aria-label="Customer reviews carousel">
+                    <div class="reviews-viewport">
+                        <div class="reviews-track" id="reviewsTrack" aria-live="polite">
+                            <article class="review-card review-slide is-active" data-review-index="0">
+                                <p>"Real New York pizza, always on point."</p>
+                                <h3>Jimmy D.</h3>
+                            </article>
+                            <article class="review-card review-slide" data-review-index="1">
+                                <p>"Super friendly team and the food is always fresh, hot, and delicious."</p>
+                                <h3>Sandra T.</h3>
+                            </article>
+                            <article class="review-card review-slide" data-review-index="2">
+                                <p>"My go-to spot for chicken dishes and family dinners."</p>
+                                <h3>Stephen H.</h3>
+                            </article>
+                            <article class="review-card review-slide" data-review-index="3">
+                                <p>"Great service and great slices. Highly recommended for takeout night."</p>
+                                <h3>John V.</h3>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="reviews-controls" aria-label="Carousel controls">
+                        <button class="review-nav" id="reviewsPrev" type="button" aria-label="Show previous review">Prev</button>
+                        <div class="review-dots" id="reviewDots" aria-label="Choose a review"></div>
+                        <button class="review-nav" id="reviewsNext" type="button" aria-label="Show next review">Next</button>
+                    </div>
+                    <div class="review-progress" aria-hidden="true">
+                        <span class="review-progress-bar" id="reviewProgressBar"></span>
+                    </div>
                 </div>
             </div>
         </section>

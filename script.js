@@ -116,6 +116,157 @@ function setupTouchWheelSnapAssist() {
     );
 }
 
+function setupReviewsCarousel() {
+    const carousel = document.getElementById("reviewsCarousel");
+    const track = document.getElementById("reviewsTrack");
+    const prevButton = document.getElementById("reviewsPrev");
+    const nextButton = document.getElementById("reviewsNext");
+    const dotsWrap = document.getElementById("reviewDots");
+    const progress = document.getElementById("reviewProgressBar");
+
+    if (!carousel || !track || !prevButton || !nextButton || !dotsWrap) return;
+
+    const slides = Array.from(track.querySelectorAll(".review-slide"));
+    if (slides.length < 2) return;
+
+    let current = 0;
+    let autoTimer = null;
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+
+    const dots = slides.map((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "review-dot";
+        dot.setAttribute("aria-label", `Show review ${index + 1}`);
+        dot.addEventListener("click", () => {
+            goTo(index);
+            restartAutoPlay();
+        });
+        dotsWrap.appendChild(dot);
+        return dot;
+    });
+
+    function render() {
+        const offset = current * 100;
+        track.style.transform = `translate3d(-${offset}%, 0, 0)`;
+
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("is-active", index === current);
+            slide.setAttribute("aria-hidden", index === current ? "false" : "true");
+        });
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("is-active", index === current);
+        });
+
+        if (progress) {
+            progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+        }
+    }
+
+    function goTo(index) {
+        const max = slides.length - 1;
+        if (index < 0) current = max;
+        else if (index > max) current = 0;
+        else current = index;
+        render();
+    }
+
+    function next() {
+        goTo(current + 1);
+    }
+
+    function prev() {
+        goTo(current - 1);
+    }
+
+    function startAutoPlay() {
+        autoTimer = window.setInterval(next, 4200);
+    }
+
+    function stopAutoPlay() {
+        if (!autoTimer) return;
+        window.clearInterval(autoTimer);
+        autoTimer = null;
+    }
+
+    function restartAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    prevButton.addEventListener("click", () => {
+        prev();
+        restartAutoPlay();
+    });
+
+    nextButton.addEventListener("click", () => {
+        next();
+        restartAutoPlay();
+    });
+
+    carousel.addEventListener("mouseenter", stopAutoPlay);
+    carousel.addEventListener("mouseleave", startAutoPlay);
+    carousel.addEventListener("focusin", stopAutoPlay);
+    carousel.addEventListener("focusout", startAutoPlay);
+
+    window.addEventListener("keydown", (event) => {
+        const reviewsPanel = document.getElementById("reviews");
+        if (!reviewsPanel || !reviewsPanel.classList.contains("is-active")) return;
+
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            prev();
+            restartAutoPlay();
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            next();
+            restartAutoPlay();
+        }
+    });
+
+    carousel.addEventListener(
+        "touchstart",
+        (event) => {
+            touchStartX = event.changedTouches[0].clientX;
+            touchDeltaX = 0;
+            stopAutoPlay();
+        },
+        { passive: true }
+    );
+
+    carousel.addEventListener(
+        "touchmove",
+        (event) => {
+            touchDeltaX = event.changedTouches[0].clientX - touchStartX;
+        },
+        { passive: true }
+    );
+
+    carousel.addEventListener(
+        "touchend",
+        () => {
+            if (Math.abs(touchDeltaX) > 40) {
+                if (touchDeltaX < 0) next();
+                else prev();
+            }
+            startAutoPlay();
+        },
+        { passive: true }
+    );
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopAutoPlay();
+        else startAutoPlay();
+    });
+
+    render();
+    startAutoPlay();
+}
+
 if (panels.length) {
     setActivePanel(0);
     setupPanelObserver();
@@ -123,3 +274,5 @@ if (panels.length) {
     setupKeyboardNavigation();
     setupTouchWheelSnapAssist();
 }
+
+setupReviewsCarousel();

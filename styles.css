@@ -25,7 +25,8 @@ body {
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 0.5rem;
 }
 
 body {
@@ -37,6 +38,8 @@ body {
     color: var(--ink);
     line-height: 1.45;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: 100%;
     transition: background 0.6s var(--ease-out);
 }
 
@@ -205,12 +208,13 @@ img {
     position: relative;
     min-height: 100svh;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     isolation: isolate;
     display: grid;
     align-items: center;
     padding: clamp(5.2rem, 12vw, 7.4rem) clamp(1rem, 5vw, 4rem) clamp(2.4rem, 7vw, 4rem);
     perspective: 1000px;
+    transform: translateZ(0);
 }
 
 .panel-bg {
@@ -223,6 +227,7 @@ img {
     filter: saturate(1.04) contrast(1.04) brightness(0.4);
     transform: scale(1.12) translateY(2.2%);
     transition: transform 1.3s var(--ease-out), filter 1.2s var(--ease-out), opacity 0.9s var(--ease-out);
+    will-change: transform, filter, opacity;
 }
 
 .panel::before {
@@ -263,6 +268,8 @@ img {
     opacity: 0.12;
     transform: translate3d(0, 64px, -28px) rotateX(8deg) scale(0.98);
     transition: opacity 0.75s var(--ease-out), transform 0.95s var(--ease-out), border-color 0.6s var(--ease-out);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
 }
 
 .panel.is-active .panel-inner {
@@ -275,6 +282,29 @@ img {
 .panel.is-active .panel-bg {
     transform: scale(1.03) translateY(0);
     filter: saturate(1.18) contrast(1.12) brightness(0.56);
+}
+
+.panel.is-active .kicker,
+.panel.is-active h1,
+.panel.is-active h2,
+.panel.is-active .lede,
+.panel.is-active .actions,
+.panel.is-active .scroll-hint,
+.panel.is-active .stat-block,
+.panel.is-active .faq {
+    animation: mobileContentRise 0.72s var(--ease-out) both;
+}
+
+.panel.is-active h1,
+.panel.is-active h2 {
+    animation-delay: 0.06s;
+}
+
+.panel.is-active .lede,
+.panel.is-active .actions,
+.panel.is-active .stat-block,
+.panel.is-active .faq {
+    animation-delay: 0.12s;
 }
 
 .panel.is-active::before {
@@ -447,11 +477,29 @@ h3 {
     font-size: 0.86rem;
 }
 
-.review-grid {
+.reviews-carousel {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 1rem;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(229, 188, 113, 0.12), transparent 36%),
+        linear-gradient(145deg, rgba(13, 10, 10, 0.84), rgba(13, 10, 10, 0.46));
+    box-shadow: 0 26px 66px rgba(0, 0, 0, 0.42);
+    padding: 1rem;
+}
+
+.reviews-viewport {
+    overflow: hidden;
+    border-radius: 0.9rem;
+}
+
+.reviews-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0.85rem;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.72s var(--ease-out);
+    touch-action: pan-y;
 }
 
 .review-card {
@@ -459,19 +507,99 @@ h3 {
     border-radius: 0.95rem;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    transform: translateY(26px) scale(0.97);
 }
 
-.review-card p {
-    font-size: 0.98rem;
-    color: rgba(248, 241, 228, 0.9);
+.review-slide {
+    min-width: 100%;
+    opacity: 0.45;
+    transform: scale(0.95) translateY(10px);
+    transition: opacity 0.62s var(--ease-out), transform 0.62s var(--ease-out), border-color 0.62s var(--ease-out);
 }
 
-.review-card h3 {
-    margin-top: 0.7rem;
+.review-slide.is-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    border-color: rgba(245, 241, 232, 0.42);
+}
+
+.review-slide p {
+    font-size: clamp(1rem, 2.6vw, 1.2rem);
+    color: rgba(248, 241, 228, 0.94);
+    text-wrap: pretty;
+}
+
+.review-slide h3 {
+    margin-top: 0.8rem;
     font-size: 1rem;
     color: var(--gold);
+    letter-spacing: 0.02em;
+}
+
+.reviews-controls {
+    margin-top: 0.9rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.review-nav {
+    border: 1px solid rgba(245, 241, 232, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--logo-white);
+    border-radius: 999px;
+    padding: 0.48rem 0.8rem;
+    font-family: "Syne", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out), background 0.3s var(--ease-out);
+}
+
+.review-nav:hover {
+    transform: translateY(-1px);
+    border-color: rgba(245, 241, 232, 0.55);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.review-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.review-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 241, 232, 0.42);
+    background: rgba(245, 241, 232, 0.16);
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out), background 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.review-dot.is-active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.22);
+}
+
+.review-progress {
+    margin-top: 0.8rem;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(245, 241, 232, 0.2);
+    overflow: hidden;
+}
+
+.review-progress-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--tomato), var(--gold));
+    transition: width 0.55s var(--ease-out);
 }
 
 .menu-card {
@@ -521,6 +649,10 @@ h3 {
 .panel.is-active .menu-column:nth-child(4),
 .panel.is-active .review-card:nth-child(4) {
     animation-delay: 0.24s;
+}
+
+.panel.is-active .reviews-carousel {
+    animation: cardRise 0.75s var(--ease-out) forwards;
 }
 
 .panel.is-active .menu-card:nth-child(2) {
@@ -643,6 +775,29 @@ h3 {
     }
 }
 
+@keyframes mobileContentRise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileBgPulse {
+    0% {
+        transform: scale(1.03) translateY(0);
+    }
+    50% {
+        transform: scale(1.06) translateY(-0.6%);
+    }
+    100% {
+        transform: scale(1.03) translateY(0);
+    }
+}
+
 @media (max-width: 980px) {
     .story-nav {
         right: 0.45rem;
@@ -656,9 +811,15 @@ h3 {
     .split,
     .menu-grid,
     .full-menu-grid,
-    .review-grid,
+    .reviews-controls,
     .photo-row {
         grid-template-columns: 1fr;
+    }
+
+    .reviews-controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .photo-row img {
@@ -667,13 +828,15 @@ h3 {
 }
 
 @media (max-width: 720px) {
-    html {
-        scroll-snap-type: y proximity;
+    html,
+    body {
+        min-height: 100dvh;
     }
 
     .floating-header {
         width: min(96vw, 1200px);
         padding: 0.75rem 0.85rem;
+        top: max(0.55rem, env(safe-area-inset-top));
     }
 
     .top-cta {
@@ -697,17 +860,18 @@ h3 {
         backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 999px;
-        padding: 0.45rem 0.7rem;
+        padding: 0.56rem 0.86rem;
     }
 
     .story-link {
         font-size: 0;
-        min-width: 1rem;
+        min-width: 1.2rem;
+        min-height: 1.2rem;
     }
 
     .story-link::before {
-        width: 0.62rem;
-        height: 0.62rem;
+        width: 0.7rem;
+        height: 0.7rem;
         margin-right: 0;
     }
 
@@ -716,15 +880,25 @@ h3 {
     }
 
     .panel {
-        padding-top: 5.4rem;
-        padding-bottom: 4.3rem;
+        min-height: 100dvh;
+        padding-top: 5.2rem;
+        padding-bottom: 4.9rem;
     }
 
     .panel-inner {
         border-radius: 1rem;
+        opacity: 0.38;
+        transform: translateY(16px) scale(0.985);
+        transition: opacity 0.52s var(--ease-out), transform 0.58s var(--ease-out), border-color 0.45s var(--ease-out);
+    }
+
+    .panel.is-active .panel-inner {
         opacity: 1;
-        transform: none;
-        transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+        transform: translateY(0) scale(1);
+    }
+
+    .panel.is-active .panel-bg {
+        animation: mobileBgPulse 7.5s ease-in-out infinite;
     }
 
     .btn {
@@ -733,7 +907,7 @@ h3 {
     }
 
     .panel::before {
-        opacity: 0.18;
+        opacity: 0.24;
     }
 }
 
@@ -748,6 +922,7 @@ h3 {
     .menu-card,
     .menu-column,
     .review-card,
+    .reviews-carousel,
     .photo-row img,
     .story-link,
     .story-link::before,
@@ -760,6 +935,7 @@ h3 {
     .panel.is-active .menu-card,
     .panel.is-active .menu-column,
     .panel.is-active .review-card,
+    .panel.is-active .reviews-carousel,
     .panel.is-active .photo-row img,
     .panel.is-active .panel-inner {
         animation: none;
