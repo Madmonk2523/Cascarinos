@@ -2,19 +2,25 @@ const panels = Array.from(document.querySelectorAll(".panel"));
 const storyLinks = Array.from(document.querySelectorAll(".story-link"));
 const progressBar = document.querySelector(".story-progress");
 
-if (!panels.length) {
-    throw new Error("No story panels found.");
-}
-
 let activeIndex = 0;
 let scrollLock = false;
 
 function setActivePanel(index) {
+    const previousIndex = activeIndex;
     const clamped = Math.max(0, Math.min(index, panels.length - 1));
     activeIndex = clamped;
 
     panels.forEach((panel, panelIndex) => {
         panel.classList.toggle("is-active", panelIndex === clamped);
+
+        if (panelIndex !== clamped) return;
+        if (clamped > previousIndex) {
+            panel.dataset.motion = "down";
+        } else if (clamped < previousIndex) {
+            panel.dataset.motion = "up";
+        } else {
+            panel.dataset.motion = "down";
+        }
     });
 
     storyLinks.forEach((link, linkIndex) => {
@@ -110,8 +116,10 @@ function setupTouchWheelSnapAssist() {
     );
 }
 
-setActivePanel(0);
-setupPanelObserver();
-setupNavigationLinks();
-setupKeyboardNavigation();
-setupTouchWheelSnapAssist();
+if (panels.length) {
+    setActivePanel(0);
+    setupPanelObserver();
+    setupNavigationLinks();
+    setupKeyboardNavigation();
+    setupTouchWheelSnapAssist();
+}
