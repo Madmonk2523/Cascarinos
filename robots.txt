@@ -1,26 +1,7 @@
-# Robots.txt for Cascarino's Pizzeria
-# Provides instructions to search engine crawlers
-
 User-agent: *
 Allow: /
 Allow: /index.html
+Allow: /menu.html
 Allow: /styles.css
 Allow: /script.js
-
-# Disallow crawling of unnecessary directories
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-
-# Specify sitemap location
 Sitemap: https://cascarinospizzeria.com/sitemap.xml
-
-# Crawl delay for respectful crawling
-Crawl-delay: 1
-
-# Allow specific search engines priority access
-User-agent: Googlebot
-Crawl-delay: 0
-
-User-agent: Bingbot
-Crawl-delay: 0

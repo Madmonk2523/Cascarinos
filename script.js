@@ -1,209 +1,117 @@
-// Cascarino's one-page interactions
+const panels = Array.from(document.querySelectorAll(".panel"));
+const storyLinks = Array.from(document.querySelectorAll(".story-link"));
+const progressBar = document.querySelector(".story-progress");
 
-const header = document.getElementById("header");
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-const navAnchors = document.querySelectorAll('a[href^="#"]');
-const reveals = document.querySelectorAll(".reveal");
-const reviewsCarousel = document.getElementById("reviewsCarousel");
+if (!panels.length) {
+    throw new Error("No story panels found.");
+}
 
-function onScrollHeaderState() {
-    if (window.scrollY > 24) {
-        header.classList.add("is-solid");
-    } else {
-        header.classList.remove("is-solid");
+let activeIndex = 0;
+let scrollLock = false;
+
+function setActivePanel(index) {
+    const clamped = Math.max(0, Math.min(index, panels.length - 1));
+    activeIndex = clamped;
+
+    panels.forEach((panel, panelIndex) => {
+        panel.classList.toggle("is-active", panelIndex === clamped);
+    });
+
+    storyLinks.forEach((link, linkIndex) => {
+        const isActive = linkIndex === clamped;
+        link.classList.toggle("is-active", isActive);
+        link.setAttribute("aria-current", isActive ? "page" : "false");
+    });
+
+    const panelName = panels[clamped].dataset.panel || "home";
+    document.body.setAttribute("data-theme", panelName);
+
+    if (progressBar) {
+        const progress = (clamped / (panels.length - 1 || 1)) * 100;
+        progressBar.style.background = `linear-gradient(to bottom, rgba(255,255,255,0.65) ${progress}%, rgba(255,255,255,0.12) ${progress}%)`;
     }
 }
 
-function toggleMobileMenu() {
-    const isOpen = mobileMenu.classList.toggle("open");
-    menuToggle.classList.toggle("active", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+function scrollToPanel(index) {
+    const target = panels[Math.max(0, Math.min(index, panels.length - 1))];
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function closeMobileMenu() {
-    mobileMenu.classList.remove("open");
-    menuToggle.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded", "false");
-}
-
-// Smooth-scroll with fixed-header offset
-function setupAnchorScrolling() {
-    navAnchors.forEach((anchor) => {
-        anchor.addEventListener("click", (event) => {
-            const href = anchor.getAttribute("href");
-            if (!href || href === "#") return;
-
-            const target = document.querySelector(href);
-            if (!target) return;
-
-            event.preventDefault();
-            const offset = header.offsetHeight + 12;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-            window.scrollTo({ top, behavior: "smooth" });
-            closeMobileMenu();
-        });
-    });
-}
-
-// IntersectionObserver reveal system for scroll-triggered fade-up
-function setupReveals() {
+function setupPanelObserver() {
     if (!("IntersectionObserver" in window)) {
-        reveals.forEach((item) => item.classList.add("in-view"));
+        setActivePanel(0);
         return;
     }
 
-    const observer = new IntersectionObserver(
-        (entries, io) => {
+    const panelObserver = new IntersectionObserver(
+        (entries) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
+                if (!entry.isIntersecting || entry.intersectionRatio < 0.62) return;
+
+                const index = panels.indexOf(entry.target);
+                if (index >= 0) {
+                    setActivePanel(index);
+                }
             });
         },
         {
-            threshold: 0.14,
-            rootMargin: "0px 0px -10% 0px"
+            threshold: [0.62, 0.8],
+            rootMargin: "0px"
         }
     );
 
-    reveals.forEach((item) => observer.observe(item));
+    panels.forEach((panel) => panelObserver.observe(panel));
 }
 
-// Subtle parallax movement on hero gradient backdrop
-function setupParallax() {
-    let ticking = false;
-
-    function updateParallax() {
-        const y = Math.min(window.scrollY, 700);
-        document.documentElement.style.setProperty("--parallax-shift", `${y * -0.25}px`);
-        ticking = false;
-    }
-
-    window.addEventListener("scroll", () => {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(updateParallax);
+function setupNavigationLinks() {
+    storyLinks.forEach((link, index) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            scrollToPanel(index);
+        });
     });
-
-    updateParallax();
 }
 
-function setupReviewCarousel() {
-    if (!reviewsCarousel) return;
+function setupKeyboardNavigation() {
+    window.addEventListener("keydown", (event) => {
+        const key = event.key;
+        const nextKeys = ["ArrowDown", "PageDown", " "];
+        const prevKeys = ["ArrowUp", "PageUp"];
 
-    const track = document.getElementById("reviewsTrack");
-    const prevButton = document.getElementById("reviewPrev");
-    const nextButton = document.getElementById("reviewNext");
-    const dotsWrap = document.getElementById("reviewDots");
-    const slides = track ? Array.from(track.querySelectorAll(".review-card")) : [];
-    if (!track || !prevButton || !nextButton || !dotsWrap || slides.length < 2) return;
+        if (nextKeys.includes(key)) {
+            event.preventDefault();
+            scrollToPanel(activeIndex + 1);
+            return;
+        }
 
-    let currentIndex = 0;
-    let autoTimer = null;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const dots = slides.map((_, index) => {
-        const dot = document.createElement("button");
-        dot.className = "review-dot";
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Go to review ${index + 1}`);
-        dot.addEventListener("click", () => {
-            goToSlide(index);
-            restartAutoPlay();
-        });
-        dotsWrap.appendChild(dot);
-        return dot;
+        if (prevKeys.includes(key)) {
+            event.preventDefault();
+            scrollToPanel(activeIndex - 1);
+        }
     });
+}
 
-    function render() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, index) => {
-            dot.classList.toggle("is-active", index === currentIndex);
-        });
-    }
-
-    function goToSlide(index) {
-        const max = slides.length - 1;
-        if (index < 0) currentIndex = max;
-        else if (index > max) currentIndex = 0;
-        else currentIndex = index;
-        render();
-    }
-
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentIndex - 1);
-    }
-
-    function startAutoPlay() {
-        autoTimer = window.setInterval(nextSlide, 5500);
-    }
-
-    function stopAutoPlay() {
-        if (!autoTimer) return;
-        window.clearInterval(autoTimer);
-        autoTimer = null;
-    }
-
-    function restartAutoPlay() {
-        stopAutoPlay();
-        startAutoPlay();
-    }
-
-    prevButton.addEventListener("click", () => {
-        prevSlide();
-        restartAutoPlay();
-    });
-
-    nextButton.addEventListener("click", () => {
-        nextSlide();
-        restartAutoPlay();
-    });
-
-    reviewsCarousel.addEventListener("mouseenter", stopAutoPlay);
-    reviewsCarousel.addEventListener("mouseleave", startAutoPlay);
-    reviewsCarousel.addEventListener("focusin", stopAutoPlay);
-    reviewsCarousel.addEventListener("focusout", startAutoPlay);
-
-    reviewsCarousel.addEventListener(
-        "touchstart",
+function setupTouchWheelSnapAssist() {
+    window.addEventListener(
+        "wheel",
         (event) => {
-            touchStartX = event.changedTouches[0].clientX;
+            if (window.innerWidth > 900) return;
+            if (Math.abs(event.deltaY) < 8) return;
+            if (scrollLock) return;
+
+            scrollLock = true;
+            window.setTimeout(() => {
+                scrollLock = false;
+            }, 260);
         },
         { passive: true }
     );
-
-    reviewsCarousel.addEventListener(
-        "touchend",
-        (event) => {
-            touchEndX = event.changedTouches[0].clientX;
-            const delta = touchEndX - touchStartX;
-            if (Math.abs(delta) < 40) return;
-            if (delta < 0) nextSlide();
-            else prevSlide();
-            restartAutoPlay();
-        },
-        { passive: true }
-    );
-
-    render();
-    startAutoPlay();
 }
 
-menuToggle.addEventListener("click", toggleMobileMenu);
-window.addEventListener("scroll", onScrollHeaderState, { passive: true });
-window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMobileMenu();
-});
-
-setupAnchorScrolling();
-setupReveals();
-setupParallax();
-setupReviewCarousel();
-onScrollHeaderState();
+setActivePanel(0);
+setupPanelObserver();
+setupNavigationLinks();
+setupKeyboardNavigation();
+setupTouchWheelSnapAssist();

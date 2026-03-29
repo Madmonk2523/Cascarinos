@@ -2,237 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cascarino's Brick Oven Pizzeria & Ristorante in Whitestone Plaza. Brick oven pizza, classic Italian entrees, and warm hospitality.">
-    <meta name="theme-color" content="#0A0A0A">
-    <title>Cascarino's Brick Oven Pizzeria & Ristorante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cascarino's Pizzeria | Scroll Experience Demo</title>
+    <meta name="description" content="An immersive demo for Cascarino's Pizzeria featuring cinematic scroll transitions, menu storytelling, and SEO-first local restaurant content.">
+    <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#130f0f">
+    <meta property="og:title" content="Cascarino's Pizzeria Scroll Experience Demo">
+    <meta property="og:description" content="A bold, section-by-section concept for the next era of Cascarino's website.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cascarino's Pizzeria Scroll Experience Demo">
+    <meta name="twitter:description" content="Home fades into About, then Menu, then Gallery in a crafted one-screen-at-a-time flow.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80">
+    <link rel="canonical" href="https://cascarinospizzeria.com/">
+    <link rel="manifest" href="manifest.json">
 
-    <!-- Typography: elegant serif + modern sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Cascarino's Brick Oven Pizzeria & Ristorante",
+            "servesCuisine": ["Pizza", "Italian"],
+            "priceRange": "$$",
+            "telephone": "+1-718-746-4370",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "152-59 10th Ave",
+                "addressLocality": "Whitestone",
+                "addressRegion": "NY",
+                "postalCode": "11357",
+                "addressCountry": "US"
+            },
+            "image": [
+                "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
+                "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1400&q=80"
+            ],
+            "openingHours": [
+                "Mo 11:00-21:00",
+                "Tu 11:00-21:00",
+                "We 11:00-21:00",
+                "Th 11:00-21:00",
+                "Fr 11:00-21:00",
+                "Sa 11:00-21:00",
+                "Su 11:00-21:00"
+            ],
+            "hasMenu": "menu.html"
+        }
+    </script>
 </head>
 <body>
-    <header class="site-header" id="header">
-        <nav class="navbar" aria-label="Main Navigation">
-            <a class="brand" href="#home"><img src="logo.jpg" alt="Cascarino's Logo" class="logo-img"></a>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-links" id="desktopMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="menu.html">Full Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <ul class="mobile-menu" id="mobileMenu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="menu.html">Full Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <header class="floating-header">
+        <a class="brand" href="#home" aria-label="Go to home section">
+            <span class="brand-main">Cascarino's</span>
+            <span class="brand-sub">Brick Oven Pizzeria</span>
+        </a>
+        <a class="top-cta" href="tel:+17187464370">Call to Order</a>
     </header>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero" id="home" aria-label="Hero">
-            <div class="hero-backdrop" aria-hidden="true"></div>
-            <div class="hero-content">
-                <p class="hero-kicker hero-stagger">Whitestone Plaza</p>
-                <h1 class="hero-title hero-stagger">Cascarino&rsquo;s</h1>
-                <p class="hero-subtitle hero-stagger">Brick Oven Pizza. Classic Italian. Done Right.</p>
-                <div class="hero-actions hero-stagger">
-                    <a class="btn btn-primary" href="menu.html">View Full Menu</a>
-                    <a class="btn btn-ghost" href="tel:+17187464370">Order Now</a>
+    <nav class="story-nav" aria-label="Section navigation">
+        <a href="#home" class="story-link is-active" data-panel-link="home">Home</a>
+        <a href="#about" class="story-link" data-panel-link="about">About</a>
+        <a href="#menu" class="story-link" data-panel-link="menu">Menu</a>
+        <a href="#gallery" class="story-link" data-panel-link="gallery">Gallery</a>
+        <a href="#visit" class="story-link" data-panel-link="visit">Visit</a>
+        <span class="story-progress" aria-hidden="true"></span>
+    </nav>
+
+    <main class="story" id="storyRoot">
+        <section id="home" class="panel is-active" data-panel="home" aria-labelledby="home-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner">
+                <p class="kicker">Whitestone, NY</p>
+                <h1 id="home-title">Classic Pizzeria Weird, <br>Done Beautifully.</h1>
+                <p class="lede">You start on Home. Scroll once and it fades into About. Scroll again and the Menu takes over. This is a living preview of Cascarino's next digital presence.</p>
+                <div class="actions">
+                    <a class="btn btn-solid" href="#about">Start The Story</a>
+                    <a class="btn btn-line" href="menu.html">See Full Menu</a>
+                </div>
+                <p class="scroll-hint">Scroll to reveal the next chapter</p>
+            </div>
+        </section>
+
+        <section id="about" class="panel" data-panel="about" aria-labelledby="about-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner split">
+                <article>
+                    <p class="kicker">About The House</p>
+                    <h2 id="about-title">Old-School Warmth.<br>Intentional Craft.</h2>
+                    <p>Cascarino's is where neighborhood comfort meets brick-oven precision. The concept here is to bring that same personality online: welcoming, dramatic, and unmistakably New York Italian.</p>
+                    <p>Every scroll reveals one complete thought. No clutter. No chaos. Just a focused sequence that mirrors the in-person experience.</p>
+                </article>
+                <aside class="stat-block" aria-label="Restaurant highlights">
+                    <p><strong>Brick Oven</strong> heat for crisp texture and char.</p>
+                    <p><strong>Family Run</strong> energy and hospitality.</p>
+                    <p><strong>Fresh Daily</strong> sauces, dough, and classics.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section id="menu" class="panel" data-panel="menu" aria-labelledby="menu-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner">
+                <p class="kicker">Menu Highlights</p>
+                <h2 id="menu-title">The Slice-First Theater</h2>
+                <div class="menu-grid" role="list" aria-label="Menu preview items">
+                    <article class="menu-card" role="listitem">
+                        <h3>Margherita</h3>
+                        <p>San Marzano tomato, mozzarella, basil.</p>
+                        <span>$14</span>
+                    </article>
+                    <article class="menu-card" role="listitem">
+                        <h3>Cascarino Special</h3>
+                        <p>Pepperoni, sausage, mushroom, peppers, onions.</p>
+                        <span>$18</span>
+                    </article>
+                    <article class="menu-card" role="listitem">
+                        <h3>Chicken Parmigiana</h3>
+                        <p>Breaded cutlet, house marinara, melted mozzarella.</p>
+                        <span>$17</span>
+                    </article>
+                    <article class="menu-card" role="listitem">
+                        <h3>Lasagna Bolognese</h3>
+                        <p>Layered pasta, slow meat sauce, ricotta finish.</p>
+                        <span>$16</span>
+                    </article>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-solid" href="menu.html">Open Full Menu</a>
+                    <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Showcase -->
-        <section class="section section-gallery" id="gallery">
-            <div class="section-head reveal">
-                <p class="eyebrow">Visual Journey</p>
-                <h2>Inside Cascarino's</h2>
-            </div>
-            <div class="gallery-grid">
-                <article class="gallery-item gallery-item-featured reveal">
-                    <img src="https://images.unsplash.com/photo-1594909122845-11bda3bf6be2?auto=format&fit=crop&w=1200&q=80" alt="Wood-fired brick oven with flames" loading="lazy" decoding="async">
-                </article>
-                <article class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561404?auto=format&fit=crop&w=800&q=80" alt="Crispy pepperoni pizza slice" loading="lazy" decoding="async">
-                </article>
-                <article class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1513739783415-e9d2a59e5281?auto=format&fit=crop&w=800&q=80" alt="Fresh pizza dough preparation" loading="lazy" decoding="async">
-                </article>
-                <article class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1521305573892-4b4f67f3cc41?auto=format&fit=crop&w=800&q=80" alt="Rustic Italian dining atmosphere" loading="lazy" decoding="async">
-                </article>
-                <article class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1459521041050-f56c1b85f38e?auto=format&fit=crop&w=800&q=80" alt="Fresh spring salad starter" loading="lazy" decoding="async">
-                </article>
-                <article class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1476124369491-78e8ca686d6b?auto=format&fit=crop&w=800&q=80" alt="Handmade pasta masterpiece" loading="lazy" decoding="async">
-                </article>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="section section-about" id="about">
-            <div class="about-grid">
-                <div class="about-copy reveal">
-                    <p class="eyebrow">About Cascarino's</p>
-                    <h2>Warm Hospitality, Bold Flavor</h2>
-                    <p>
-                        At Cascarino's Brick Oven Pizzeria & Ristorante in Whitestone, we bring together traditional Italian cooking with the authentic heat of a wood-burning brick oven.
-                        From handcrafted pizzas to classic entrees, every dish is made fresh and served with care. 
-                    </p>
-                    <p>
-                        Our passion is simple: exceptional food, welcoming atmosphere, and genuine Italian hospitality. Whether you're grabbing a slice or settling in for a full meal, we treat you like family.
-                    </p>
+        <section id="gallery" class="panel" data-panel="gallery" aria-labelledby="gallery-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner">
+                <p class="kicker">Visual Proof</p>
+                <h2 id="gallery-title">What The Real Site Can Showcase</h2>
+                <div class="photo-row">
+                    <img src="https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?auto=format&fit=crop&w=900&q=80" alt="Brick oven pizza fresh from the oven" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=900&q=80" alt="Close-up of a slice with melted cheese" loading="lazy" decoding="async">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80" alt="Classic whole pizza on rustic table" loading="lazy" decoding="async">
                 </div>
-                </div>
-                <figure class="about-image reveal">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Elegant Italian dining setting" loading="lazy" decoding="async">
-                </figure>
+                <p class="gallery-note">Swap these with real in-house photos and this sequence becomes a powerful brand story.</p>
             </div>
         </section>
 
-        <!-- Experience -->
-        <section class="section section-experience" id="experience">
-            <div class="section-head reveal">
-                <p class="eyebrow">The Experience</p>
-                <h2>Simple, Honest, Memorable</h2>
-            </div>
-            <div class="experience-grid">
-                <article class="experience-card reveal">
-                    <h3>Wood-Burning Oven</h3>
-                    <p>High-heat fire, crisp crust, and unmistakable flavor in every pie.</p>
-                </article>
-                <article class="experience-card reveal">
-                    <h3>Family Friendly</h3>
-                    <p>Casual and welcoming atmosphere for lunch, dinner, and everything between.</p>
-                </article>
-                <article class="experience-card reveal">
-                    <h3>Fresh &amp; Made Daily</h3>
-                    <p>Prepared with care every day using quality ingredients and classic technique.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Menu Preview -->
-        <section class="section section-menu" id="menu">
-            <div class="section-head reveal">
-                <p class="eyebrow">Menu Highlights</p>
-                <h2>Taste Our Specialties</h2>
-            </div>
-            <div class="menu-preview reveal">
-                <div class="menu-category">
-                    <h3 class="menu-category-title">Signature Pizzas</h3>
-                    <div class="menu-items">
-                        <div class="menu-item"><span>Margherita Pizza</span><span class="menu-price">$14</span></div>
-                        <div class="menu-item"><span>Pepperoni Pizza</span><span class="menu-price">$15</span></div>
-                        <div class="menu-item"><span>The Cascarino Special</span><span class="menu-price">$18</span></div>
-                        <div class="menu-item"><span>Veggie Delight</span><span class="menu-price">$16</span></div>
+        <section id="visit" class="panel" data-panel="visit" aria-labelledby="visit-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner split">
+                <article>
+                    <p class="kicker">Visit Cascarino's</p>
+                    <h2 id="visit-title">152-59 10th Ave, Whitestone</h2>
+                    <p>Open daily from 11 AM to 9 PM. Dine in, takeout, and delivery available.</p>
+                    <p>Phone: <a href="tel:+17187464370">(718) 746-4370</a></p>
+                    <div class="actions">
+                        <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=152-59+10th+Ave%2C+Whitestone%2C+NY+11357" target="_blank" rel="noopener noreferrer">Get Directions</a>
+                        <a class="btn btn-line" href="#home">Back To Top</a>
                     </div>
-                </div>
-                <div class="menu-category">
-                    <h3 class="menu-category-title">Pasta & Entrees</h3>
-                    <div class="menu-items">
-                        <div class="menu-item"><span>Chicken Parmigiana</span><span class="menu-price">$17</span></div>
-                        <div class="menu-item"><span>Pasta Alfredo</span><span class="menu-price">$15</span></div>
-                        <div class="menu-item"><span>Eggplant Rollatine</span><span class="menu-price">$16</span></div>
-                        <div class="menu-item"><span>Lasagna Bolognese</span><span class="menu-price">$16</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-cta reveal">
-                <a class="btn btn-primary" href="menu.html">View Complete Menu</a>
-                <p class="menu-note">All items available for dine-in, takeout, and delivery</p>
-            </div>
-        </section>
-
-        <!-- Reviews -->
-        <section class="section section-reviews" id="reviews">
-            <div class="section-head reveal">
-                <p class="eyebrow">Reviews</p>
-                <h2>What Guests Are Saying</h2>
-            </div>
-
-            <div class="reviews-carousel reveal" id="reviewsCarousel">
-                <div class="reviews-viewport" aria-live="polite">
-                    <div class="reviews-track" id="reviewsTrack">
-                        <article class="review-card">
-                            <h3>Jimmy Dasher</h3>
-                            <p>"Real New York pizza 10/10"</p>
-                        </article>
-
-                        <article class="review-card">
-                            <h3>Sandra Tiberi</h3>
-                            <p>"New owners!! Super friendly, food always fresh, delicious and hot. I highly recommend."</p>
-                        </article>
-
-                        <article class="review-card">
-                            <h3>Stephen Hatzis</h3>
-                            <p>"My go to spot for chicken dishes and such! Great dishes!"</p>
-                        </article>
-
-                        <article class="review-card">
-                            <h3>Teresa</h3>
-                            <p>"I had ordered through GrubHub last night during a storm and I didn&rsquo;t realize how bad the flooding had been (totally my fault). The driver took 3 hours to deliver the food and while waiting, someone at the restaurant called twice to offer to deliver the food themselves. It was a kind gesture that was offered and much appreciated. I ended up giving the food to my neighbor who has two teenage boys because they got so excited when they heard I had ordered from Cascarino&rsquo;s. Will definitely be ordering from them again. This time when the weather is better! 😂"</p>
-                        </article>
-
-                        <article class="review-card">
-                            <h3>john vira</h3>
-                            <p>"Great selection of slices."</p>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="review-controls" aria-label="Review carousel controls">
-                    <button class="review-btn" id="reviewPrev" type="button" aria-label="Show previous review">Prev</button>
-                    <div class="review-dots" id="reviewDots" aria-label="Choose review"></div>
-                    <button class="review-btn" id="reviewNext" type="button" aria-label="Show next review">Next</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact / CTA -->
-        <section class="section section-contact" id="contact">
-            <div class="contact-wrap reveal">
-                <div class="contact-copy">
-                    <p class="eyebrow">Contact</p>
-                    <h2>Visit Us Tonight</h2>
-                    <address>
-                        Cascarino's Brick Oven Pizzeria &amp; Ristorante<br>
-                        152-59 10th Ave, Whitestone, NY 11357
-                    </address>
-                    <p><a href="tel:+17187464370">(718) 746-4370</a></p>
-                    <p>Hours: Tuesday-Sunday 11 AM - 9 PM | Monday 11 AM - 9 PM</p>
-                    <div class="contact-actions">
-                        <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=152-59+10th+Ave%2C+Whitestone%2C+NY+11357">Get Directions</a>
-                        <a class="btn btn-ghost" href="tel:+17187464370">Call Now</a>
-                    </div>
-                </div>
-                <div class="contact-map" aria-label="Map location">
-                    <iframe
-                        title="Cascarino's Whitestone Location"
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=152-59+10th+Ave,+Whitestone,+NY+11357&output=embed">
-                    </iframe>
+                </article>
+                <div class="faq" aria-label="Frequently searched questions">
+                    <h3>Popular Search Questions</h3>
+                    <p><strong>Do you have brick oven pizza?</strong><br>Yes, it is a house specialty.</p>
+                    <p><strong>Do you offer takeout?</strong><br>Yes, full takeout and delivery options are available.</p>
+                    <p><strong>Where are you located?</strong><br>Whitestone Plaza, 152-59 10th Ave, NY 11357.</p>
                 </div>
             </div>
         </section>
@@ -240,9 +181,7 @@
 
     <footer class="site-footer">
         <p>Cascarino's Brick Oven Pizzeria &amp; Ristorante</p>
-        <p>152-59 10th Ave, Whitestone, NY 11357</p>
-        <p>(718) 746-4370</p>
-        <p>Tuesday-Sunday: 11 AM - 9 PM | Monday: 11 AM - 9 PM</p>
+        <p>Designed as a scroll-based demonstration concept for the upcoming brand refresh.</p>
     </footer>
 
     <script src="script.js"></script>

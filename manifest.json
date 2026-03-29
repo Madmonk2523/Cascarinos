@@ -1,13 +1,13 @@
 {
   "name": "Cascarino's Pizzeria - Authentic New York Pizza",
   "short_name": "Cascarinos",
-  "description": "Authentic New York pizza made fresh daily. Family-owned pizzeria in Manhattan since 1989.",
+  "description": "Authentic brick oven pizza made fresh daily in Whitestone, New York.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#1a1a1a",
-  "background_color": "#1a1a1a",
+  "theme_color": "#130f0f",
+  "background_color": "#130f0f",
   "prefer_related_applications": false,
   "categories": ["food", "restaurant"],
   "screenshots": [
@@ -67,10 +67,10 @@
       "name": "Contact Us",
       "short_name": "Call",
       "description": "Call us to place an order",
-      "url": "tel:+12125551234",
+      "url": "tel:+17187464370",
       "icons": [
         {
-          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='64' fill='%23c41e3a'>📞</text></svg>",
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%23130f0f'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='40' fill='%23d9482b'>CALL</text></svg>",
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
