@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Cascarino's Pizzeria | Scroll Experience Demo</title>
-    <meta name="description" content="An immersive demo for Cascarino's Pizzeria featuring cinematic scroll transitions, menu storytelling, and SEO-first local restaurant content.">
+    <title>Cascarino's Brick Oven Pizzeria | Whitestone, NY</title>
+    <meta name="description" content="Cascarino's Brick Oven Pizzeria in Whitestone, NY. Explore our full menu, reviews, gallery, and location details for dine-in, takeout, and delivery.">
     <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="theme-color" content="#130f0f">
-    <meta property="og:title" content="Cascarino's Pizzeria Scroll Experience Demo">
-    <meta property="og:description" content="A bold, section-by-section concept for the next era of Cascarino's website.">
+    <meta property="og:title" content="Cascarino's Brick Oven Pizzeria">
+    <meta property="og:description" content="Full menu, reviews, and brick oven favorites in Whitestone, NY.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cascarino's Pizzeria Scroll Experience Demo">
-    <meta name="twitter:description" content="Home fades into About, then Menu, then Gallery in a crafted one-screen-at-a-time flow.">
+    <meta name="twitter:title" content="Cascarino's Brick Oven Pizzeria">
+    <meta name="twitter:description" content="Full menu, neighborhood favorites, and authentic brick oven pizza in Whitestone.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80">
     <link rel="canonical" href="https://cascarinospizzeria.com/">
     <link rel="manifest" href="manifest.json">
@@ -71,6 +71,7 @@
         <a href="#home" class="story-link is-active" data-panel-link="home">Home</a>
         <a href="#about" class="story-link" data-panel-link="about">About</a>
         <a href="#menu" class="story-link" data-panel-link="menu">Menu</a>
+        <a href="#reviews" class="story-link" data-panel-link="reviews">Reviews</a>
         <a href="#gallery" class="story-link" data-panel-link="gallery">Gallery</a>
         <a href="#visit" class="story-link" data-panel-link="visit">Visit</a>
         <span class="story-progress" aria-hidden="true"></span>
@@ -82,12 +83,12 @@
             <div class="panel-inner">
                 <p class="kicker">Whitestone, NY</p>
                 <h1 id="home-title">Classic Brick Oven Craft, <br>Done Beautifully.</h1>
-                <p class="lede">You start on Home. Scroll once and it fades into About. Scroll again and the Menu takes over. This is a living preview of Cascarino's next digital presence.</p>
+                <p class="lede">Welcome to Cascarino's official site experience. Explore the full menu, real guest reviews, house specialties, and everything you need to order or visit.</p>
                 <div class="actions">
-                    <a class="btn btn-solid" href="#about">Start The Story</a>
-                    <a class="btn btn-line" href="menu.html">See Full Menu</a>
+                    <a class="btn btn-solid" href="#menu">View Full Menu</a>
+                    <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
                 </div>
-                <p class="scroll-hint">Scroll to reveal the next chapter</p>
+                <p class="scroll-hint">Scroll to explore menu, reviews, gallery, and location</p>
             </div>
         </section>
 
@@ -111,33 +112,63 @@
         <section id="menu" class="panel" data-panel="menu" aria-labelledby="menu-title">
             <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1800&q=80')"></div>
             <div class="panel-inner">
-                <p class="kicker">Menu Highlights</p>
-                <h2 id="menu-title">The Slice-First Theater</h2>
-                <div class="menu-grid" role="list" aria-label="Menu preview items">
-                    <article class="menu-card" role="listitem">
-                        <h3>Margherita</h3>
-                        <p>San Marzano tomato, mozzarella, basil.</p>
-                        <span>$14</span>
+                <p class="kicker">Full Menu</p>
+                <h2 id="menu-title">House Favorites and Classics</h2>
+                <div class="full-menu-grid" aria-label="Full menu sections">
+                    <article class="menu-column">
+                        <h3>Signature Pizzas</h3>
+                        <ul>
+                            <li><span>Margherita</span><strong>$14</strong></li>
+                            <li><span>Pepperoni</span><strong>$15</strong></li>
+                            <li><span>Cascarino Special</span><strong>$18</strong></li>
+                            <li><span>Veggie Delight</span><strong>$16</strong></li>
+                        </ul>
                     </article>
-                    <article class="menu-card" role="listitem">
-                        <h3>Cascarino Special</h3>
-                        <p>Pepperoni, sausage, mushroom, peppers, onions.</p>
-                        <span>$18</span>
+                    <article class="menu-column">
+                        <h3>Pasta and Entrees</h3>
+                        <ul>
+                            <li><span>Chicken Parmigiana</span><strong>$17</strong></li>
+                            <li><span>Eggplant Rollatine</span><strong>$16</strong></li>
+                            <li><span>Fettuccine Alfredo</span><strong>$15</strong></li>
+                            <li><span>Lasagna Bolognese</span><strong>$16</strong></li>
+                        </ul>
                     </article>
-                    <article class="menu-card" role="listitem">
-                        <h3>Chicken Parmigiana</h3>
-                        <p>Breaded cutlet, house marinara, melted mozzarella.</p>
-                        <span>$17</span>
+                    <article class="menu-column">
+                        <h3>Appetizers</h3>
+                        <ul>
+                            <li><span>Garlic Bread</span><strong>$6</strong></li>
+                            <li><span>Mozzarella Sticks</span><strong>$9</strong></li>
+                            <li><span>Calamari Fritti</span><strong>$12</strong></li>
+                            <li><span>Bruschetta</span><strong>$8</strong></li>
+                        </ul>
                     </article>
-                    <article class="menu-card" role="listitem">
-                        <h3>Lasagna Bolognese</h3>
-                        <p>Layered pasta, slow meat sauce, ricotta finish.</p>
-                        <span>$16</span>
+                    <article class="menu-column">
+                        <h3>Salads and Desserts</h3>
+                        <ul>
+                            <li><span>Classic Caesar</span><strong>$11</strong></li>
+                            <li><span>Garden Salad</span><strong>$10</strong></li>
+                            <li><span>Tiramisu</span><strong>$7</strong></li>
+                            <li><span>Panna Cotta</span><strong>$7</strong></li>
+                        </ul>
                     </article>
                 </div>
                 <div class="actions">
                     <a class="btn btn-solid" href="menu.html">Open Full Menu</a>
                     <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="panel" data-panel="reviews" aria-labelledby="reviews-title">
+            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-inner">
+                <p class="kicker">Guest Reviews</p>
+                <h2 id="reviews-title">What People Say About Cascarino's</h2>
+                <div class="review-grid" aria-label="Customer reviews">
+                    <article class="review-card"><p>"Real New York pizza, always on point."</p><h3>Jimmy D.</h3></article>
+                    <article class="review-card"><p>"Super friendly team and the food is always fresh, hot, and delicious."</p><h3>Sandra T.</h3></article>
+                    <article class="review-card"><p>"My go-to spot for chicken dishes and family dinners."</p><h3>Stephen H.</h3></article>
+                    <article class="review-card"><p>"Great service and great slices. Highly recommended for takeout night."</p><h3>John V.</h3></article>
                 </div>
             </div>
         </section>
@@ -152,7 +183,7 @@
                     <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=900&q=80" alt="Close-up of a slice with melted cheese" loading="lazy" decoding="async">
                     <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80" alt="Classic whole pizza on rustic table" loading="lazy" decoding="async">
                 </div>
-                <p class="gallery-note">Swap these with real in-house photos and this sequence becomes a powerful brand story.</p>
+                <p class="gallery-note">Fresh slices, classic pies, and neighborhood atmosphere in every frame.</p>
             </div>
         </section>
 
@@ -181,7 +212,7 @@
 
     <footer class="site-footer">
         <p>Cascarino's Brick Oven Pizzeria &amp; Ristorante</p>
-        <p>Designed as a scroll-based demonstration concept for the upcoming brand refresh.</p>
+        <p>152-59 10th Ave, Whitestone, NY 11357 | (718) 746-4370</p>
     </footer>
 
     <script src="script.js"></script>
