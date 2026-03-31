@@ -74,6 +74,18 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .menu-quick-links {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .menu-quick-links .btn {
+            min-width: 180px;
+            justify-content: center;
+        }
+
         .menu-section-card {
             border: 1px solid rgba(245, 241, 232, 0.18);
             border-radius: 1rem;
@@ -160,6 +172,10 @@
                 padding-top: 5.2rem;
             }
 
+            .menu-quick-links .btn {
+                width: 100%;
+            }
+
             .menu-footer-actions {
                 width: 100%;
             }
@@ -186,6 +202,11 @@
                 <h1 id="menu-page-title">Classic Brick Oven Menu</h1>
                 <p>From crisp, flame-finished pies to house pasta and Italian staples, every item is built around classic technique and everyday consistency.</p>
             </div>
+        </section>
+
+        <section class="menu-quick-links" aria-label="Quick navigation">
+            <a class="btn btn-line" href="index.html#home">Back to Home</a>
+            <a class="btn btn-solid" href="tel:+17187464370">Call to Order</a>
         </section>
 
         <section class="menu-grid-sections" aria-label="Menu categories">

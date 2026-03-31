@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Cascarino's Brick Oven Pizzeria | Whitestone, NY</title>
     <meta name="description" content="Cascarino's Brick Oven Pizzeria in Whitestone, NY. Explore our full menu, reviews, gallery, and location details for dine-in, takeout, and delivery.">
     <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
@@ -64,8 +64,25 @@
             <span class="brand-main">Cascarino's</span>
             <span class="brand-sub">Brick Oven Pizzeria</span>
         </a>
-        <a class="top-cta" href="tel:+17187464370">Call to Order</a>
+        <div class="header-actions">
+            <a class="top-cta" href="tel:+17187464370">Call to Order</a>
+            <button class="hamburger" id="mobileMenuToggle" type="button" aria-label="Open navigation" aria-controls="mobileMenu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" hidden></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile section navigation" hidden>
+        <a href="#home" class="mobile-nav-link story-link is-active" data-panel-link="home">Home</a>
+        <a href="#about" class="mobile-nav-link story-link" data-panel-link="about">About</a>
+        <a href="#menu" class="mobile-nav-link story-link" data-panel-link="menu">Menu</a>
+        <a href="#reviews" class="mobile-nav-link story-link" data-panel-link="reviews">Reviews</a>
+        <a href="#gallery" class="mobile-nav-link story-link" data-panel-link="gallery">Gallery</a>
+        <a href="#visit" class="mobile-nav-link story-link" data-panel-link="visit">Visit</a>
+    </aside>
 
     <nav class="story-nav" aria-label="Section navigation">
         <a href="#home" class="story-link is-active" data-panel-link="home">Home</a>

@@ -1,9 +1,15 @@
 const panels = Array.from(document.querySelectorAll(".panel"));
 const storyLinks = Array.from(document.querySelectorAll(".story-link"));
 const progressBar = document.querySelector(".story-progress");
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
 
 let activeIndex = 0;
 let scrollLock = false;
+let navScrollLock = false;
+let navScrollTimer = null;
+let lastScrollY = 0;
 
 function setActivePanel(index) {
     const previousIndex = activeIndex;
@@ -32,15 +38,55 @@ function setActivePanel(index) {
     const panelName = panels[clamped].dataset.panel || "home";
     document.body.setAttribute("data-theme", panelName);
 
+    if (window.innerWidth <= 720) {
+        closeMobileMenu();
+    }
+
     if (progressBar) {
         const progress = (clamped / (panels.length - 1 || 1)) * 100;
         progressBar.style.background = `linear-gradient(to bottom, rgba(255,255,255,0.65) ${progress}%, rgba(255,255,255,0.12) ${progress}%)`;
     }
 }
 
+function openMobileMenu() {
+    if (!mobileMenu || !mobileMenuBackdrop || !mobileMenuToggle) return;
+
+    document.body.classList.add("mobile-menu-open");
+    mobileMenu.hidden = false;
+    mobileMenuBackdrop.hidden = false;
+    mobileMenuToggle.setAttribute("aria-expanded", "true");
+    mobileMenuToggle.setAttribute("aria-label", "Close navigation");
+}
+
+function closeMobileMenu() {
+    if (!mobileMenu || !mobileMenuBackdrop || !mobileMenuToggle) return;
+
+    document.body.classList.remove("mobile-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    mobileMenuToggle.setAttribute("aria-label", "Open navigation");
+
+    // Keep hidden in sync after the close transition so clicks cannot pass through.
+    window.setTimeout(() => {
+        if (document.body.classList.contains("mobile-menu-open")) return;
+        mobileMenu.hidden = true;
+        mobileMenuBackdrop.hidden = true;
+    }, 260);
+}
+
 function scrollToPanel(index) {
+    if (navScrollLock) return;
+
     const target = panels[Math.max(0, Math.min(index, panels.length - 1))];
     if (!target) return;
+
+    navScrollLock = true;
+    if (navScrollTimer) {
+        window.clearTimeout(navScrollTimer);
+    }
+
+    navScrollTimer = window.setTimeout(() => {
+        navScrollLock = false;
+    }, 680);
 
     target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -76,7 +122,32 @@ function setupNavigationLinks() {
         link.addEventListener("click", (event) => {
             event.preventDefault();
             scrollToPanel(index);
+            closeMobileMenu();
         });
+    });
+}
+
+function setupMobileMenu() {
+    if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) return;
+
+    mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = document.body.classList.contains("mobile-menu-open");
+        if (isOpen) closeMobileMenu();
+        else openMobileMenu();
+    });
+
+    mobileMenuBackdrop.addEventListener("click", closeMobileMenu);
+
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 720) {
+            closeMobileMenu();
+        }
     });
 }
 
@@ -111,6 +182,43 @@ function setupTouchWheelSnapAssist() {
             window.setTimeout(() => {
                 scrollLock = false;
             }, 260);
+        },
+        { passive: true }
+    );
+}
+
+function setupMobileZoomLock() {
+    const isPhone = window.matchMedia("(max-width: 720px)").matches;
+    if (!isPhone) return;
+
+    const preventGestureZoom = (event) => {
+        event.preventDefault();
+    };
+
+    ["gesturestart", "gesturechange", "gestureend"].forEach((eventName) => {
+        document.addEventListener(eventName, preventGestureZoom, { passive: false });
+    });
+}
+
+function setupMobileHeaderMotion() {
+    if (window.innerWidth > 720) return;
+
+    lastScrollY = window.scrollY;
+
+    window.addEventListener(
+        "scroll",
+        () => {
+            const currentY = window.scrollY;
+            const scrolledDown = currentY > lastScrollY;
+            const awayFromTop = currentY > 36;
+
+            if (scrolledDown && awayFromTop) {
+                document.body.classList.add("header-condensed");
+            } else if (!awayFromTop || currentY + 3 < lastScrollY) {
+                document.body.classList.remove("header-condensed");
+            }
+
+            lastScrollY = currentY;
         },
         { passive: true }
     );
@@ -182,7 +290,7 @@ function setupReviewsCarousel() {
     }
 
     function startAutoPlay() {
-        autoTimer = window.setInterval(next, 4200);
+        autoTimer = window.setInterval(next, 7000);
     }
 
     function stopAutoPlay() {
@@ -275,4 +383,7 @@ if (panels.length) {
     setupTouchWheelSnapAssist();
 }
 
+setupMobileZoomLock();
+setupMobileMenu();
+setupMobileHeaderMotion();
 setupReviewsCarousel();
