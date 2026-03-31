@@ -21,6 +21,7 @@ html,
 body {
     width: 100%;
     min-height: 100%;
+    overflow-x: clip;
 }
 
 html {
@@ -248,9 +249,9 @@ body.mobile-menu-open .hamburger span:nth-child(3) {
 .mobile-menu {
     position: fixed;
     top: calc(max(0.8rem, env(safe-area-inset-top)) + 3.5rem);
-    right: 0.6rem;
+    right: max(0.6rem, env(safe-area-inset-right));
     z-index: 59;
-    width: min(82vw, 18rem);
+    width: min(calc(100vw - 1.2rem - env(safe-area-inset-right)), 18rem);
     border: 1px solid rgba(245, 241, 232, 0.24);
     border-radius: 1rem;
     background:
@@ -981,7 +982,10 @@ h3 {
     }
 
     .floating-header {
-        width: min(96vw, 1200px);
+        width: auto;
+        left: 0.5rem;
+        right: 0.5rem;
+        transform: none;
         padding: 0.75rem 0.85rem;
         top: max(0.55rem, env(safe-area-inset-top));
     }
