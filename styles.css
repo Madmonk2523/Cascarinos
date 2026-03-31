@@ -21,7 +21,6 @@ html,
 body {
     width: 100%;
     min-height: 100%;
-    overflow-x: clip;
 }
 
 html {
@@ -976,9 +975,15 @@ h3 {
 }
 
 @media (max-width: 720px) {
+    html {
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+    }
+
     html,
     body {
         min-height: 100dvh;
+        overscroll-behavior-y: auto;
     }
 
     .floating-header {
@@ -1016,6 +1021,7 @@ h3 {
 
     .panel {
         min-height: 100dvh;
+        scroll-snap-align: none;
         padding-top: 5.2rem;
         padding-bottom: 3.25rem;
     }
@@ -1036,8 +1042,13 @@ h3 {
         transform: translateY(0) scale(1);
     }
 
+    .panel-bg {
+        transition: none;
+        transform: none;
+    }
+
     .panel.is-active .panel-bg {
-        animation: mobileBgPulse 7.5s ease-in-out infinite;
+        animation: none;
     }
 
     .btn {
@@ -1046,7 +1057,7 @@ h3 {
     }
 
     .panel::before {
-        opacity: 0.24;
+        display: none;
     }
 
     .site-footer {

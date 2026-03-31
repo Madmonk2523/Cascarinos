@@ -5,7 +5,7 @@ const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
 
-let activeIndex = 0;
+let activeIndex = -1;
 let scrollLock = false;
 let navScrollLock = false;
 let navScrollTimer = null;
@@ -14,6 +14,9 @@ let lastScrollY = 0;
 function setActivePanel(index) {
     const previousIndex = activeIndex;
     const clamped = Math.max(0, Math.min(index, panels.length - 1));
+
+    if (clamped === activeIndex) return;
+
     activeIndex = clamped;
 
     panels.forEach((panel, panelIndex) => {
