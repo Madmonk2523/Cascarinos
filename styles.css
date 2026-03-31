@@ -109,23 +109,16 @@ body.header-condensed .floating-header {
 }
 
 .brand {
-    display: grid;
-    gap: 0.05rem;
+    display: flex;
+    align-items: center;
     color: var(--logo-white);
 }
 
-.brand-main {
-    font-family: "Syne", sans-serif;
-    font-size: clamp(1rem, 2.3vw, 1.2rem);
-    font-weight: 800;
-    letter-spacing: 0.02em;
-}
-
-.brand-sub {
-    font-size: 0.72rem;
-    opacity: 0.84;
-    text-transform: uppercase;
-    letter-spacing: 0.17em;
+.brand-logo {
+    height: 2.6rem;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .top-cta {
@@ -778,6 +771,14 @@ h3 {
     color: rgba(248, 241, 228, 0.72);
 }
 
+.footer-logo {
+    height: 3rem;
+    width: auto;
+    margin: 0 auto 0.6rem;
+    object-fit: contain;
+    display: block;
+}
+
 .site-footer p + p {
     margin-top: 0.35rem;
 }
@@ -939,8 +940,8 @@ h3 {
         display: inline-flex;
     }
 
-    .brand-sub {
-        display: none;
+    .brand-logo {
+        height: 2rem;
     }
 
     .top-nav {
