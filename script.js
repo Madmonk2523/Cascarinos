@@ -1,5 +1,5 @@
 const panels = Array.from(document.querySelectorAll(".panel"));
-const storyLinks = Array.from(document.querySelectorAll(".story-link"));
+const navLinks = Array.from(document.querySelectorAll("[data-panel-link]"));
 const progressBar = document.querySelector(".story-progress");
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -29,14 +29,15 @@ function setActivePanel(index) {
         }
     });
 
-    storyLinks.forEach((link, linkIndex) => {
-        const isActive = linkIndex === clamped;
+    const activePanelName = panels[clamped].dataset.panel || "home";
+
+    navLinks.forEach((link) => {
+        const isActive = link.dataset.panelLink === activePanelName;
         link.classList.toggle("is-active", isActive);
         link.setAttribute("aria-current", isActive ? "page" : "false");
     });
 
-    const panelName = panels[clamped].dataset.panel || "home";
-    document.body.setAttribute("data-theme", panelName);
+    document.body.setAttribute("data-theme", activePanelName);
 
     if (window.innerWidth <= 720) {
         closeMobileMenu();
@@ -46,6 +47,15 @@ function setActivePanel(index) {
         const progress = (clamped / (panels.length - 1 || 1)) * 100;
         progressBar.style.background = `linear-gradient(to bottom, rgba(255,255,255,0.65) ${progress}%, rgba(255,255,255,0.12) ${progress}%)`;
     }
+}
+
+function getPanelIndexFromLink(link) {
+    if (!link) return -1;
+
+    const panelName = link.dataset.panelLink;
+    if (!panelName) return -1;
+
+    return panels.findIndex((panel) => panel.dataset.panel === panelName);
 }
 
 function openMobileMenu() {
@@ -118,10 +128,13 @@ function setupPanelObserver() {
 }
 
 function setupNavigationLinks() {
-    storyLinks.forEach((link, index) => {
+    navLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
-            scrollToPanel(index);
+            const panelIndex = getPanelIndexFromLink(link);
+            if (panelIndex >= 0) {
+                scrollToPanel(panelIndex);
+            }
             closeMobileMenu();
         });
     });
