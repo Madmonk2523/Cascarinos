@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Cascarino's Brick Oven Pizzeria | Whitestone, NY</title>
     <meta name="description" content="Cascarino's Brick Oven Pizzeria in Whitestone, NY. Explore our full menu, reviews, gallery, and location details for dine-in, takeout, and delivery.">
     <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
@@ -11,16 +11,24 @@
     <meta property="og:title" content="Cascarino's Brick Oven Pizzeria">
     <meta property="og:description" content="Full menu, reviews, and brick oven favorites in Whitestone, NY.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://cascarinospizzeria.com/logo.jpg">
+    <meta property="og:site_name" content="Cascarino's Brick Oven Pizzeria">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="225">
+    <meta property="og:image:height" content="225">
+    <meta property="og:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Cascarino's Brick Oven Pizzeria">
     <meta name="twitter:description" content="Full menu, neighborhood favorites, and authentic brick oven pizza in Whitestone.">
-    <meta name="twitter:image" content="https://cascarinospizzeria.com/logo.jpg">
-    <link rel="canonical" href="https://cascarinospizzeria.com/">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta name="twitter:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="logo.jpg">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="225x225">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png" sizes="225x225">
+    <link rel="preload" href="logo.jpg" as="image" type="image/jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +71,7 @@
 <body>
     <header class="floating-header">
         <a class="brand" href="#home" aria-label="Go to home section">
-            <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="brand-logo">
+            <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="brand-logo" width="225" height="225" fetchpriority="high">
         </a>
         <nav class="top-nav" aria-label="Section navigation">
             <a href="#home" class="story-link is-active" data-panel-link="home">Home</a>
@@ -93,11 +101,11 @@
 
     <main class="story" id="storyRoot">
         <section id="home" class="panel is-active" data-panel="home" aria-labelledby="home-title">
-            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
             <div class="panel-inner">
                 <p class="kicker">Whitestone, NY</p>
                 <h1 id="home-title">Classic Brick Oven Craft, <br>Done Beautifully.</h1>
-                <p class="lede">Welcome to Cascarino's official site experience. Explore the full menu, real guest reviews, house specialties, and everything you need to order or visit.</p>
+                <p class="lede">A neighborhood favorite for brick-oven pizza, comforting Italian classics, and warm service that always feels close to home.</p>
                 <div class="actions">
                     <a class="btn btn-solid" href="#menu">View Full Menu</a>
                     <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
@@ -107,13 +115,13 @@
         </section>
 
         <section id="about" class="panel" data-panel="about" aria-labelledby="about-title">
-            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
             <div class="panel-inner split">
                 <article>
                     <p class="kicker">About The House</p>
                     <h2 id="about-title">Old-School Warmth.<br>Intentional Craft.</h2>
-                    <p>Cascarino's is where neighborhood comfort meets brick-oven precision. The concept here is to bring that same personality online: welcoming, dramatic, and unmistakably New York Italian.</p>
-                    <p>Every scroll reveals one complete thought. No clutter. No chaos. Just a focused sequence that mirrors the in-person experience.</p>
+                    <p>Cascarino's brings together neighborhood comfort and brick-oven precision, serving classic New York Italian food with heart, consistency, and pride.</p>
+                    <p>From crisp, charred pies to hearty favorites made fresh each day, the experience is timeless, satisfying, and genuinely welcoming.</p>
                 </article>
                 <aside class="stat-block" aria-label="Restaurant highlights">
                     <p><strong>Brick Oven</strong> heat for crisp texture and char.</p>
@@ -124,7 +132,7 @@
         </section>
 
         <section id="menu" class="panel" data-panel="menu" aria-labelledby="menu-title">
-            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
             <div class="panel-inner">
                 <p class="kicker">Full Menu</p>
                 <h2 id="menu-title">House Favorites and Classics</h2>
@@ -174,7 +182,7 @@
         </section>
 
         <section id="reviews" class="panel" data-panel="reviews" aria-labelledby="reviews-title">
-            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
             <div class="panel-inner">
                 <p class="kicker">Guest Reviews</p>
                 <h2 id="reviews-title">What People Say About Cascarino's</h2>
@@ -212,7 +220,7 @@
         </section>
 
         <section id="visit" class="panel" data-panel="visit" aria-labelledby="visit-title">
-            <div class="panel-bg" style="--panel-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=80')"></div>
+            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
             <div class="panel-inner split">
                 <article>
                     <p class="kicker">Visit Cascarino's</p>
@@ -235,10 +243,10 @@
     </main>
 
     <footer class="site-footer">
-        <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="footer-logo">
+        <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="footer-logo" width="225" height="225" loading="lazy" decoding="async">
         <p>152-59 10th Ave, Whitestone, NY 11357 | (718) 746-4370</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

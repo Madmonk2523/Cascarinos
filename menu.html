@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Menu | Cascarino's Brick Oven Pizzeria</title>
     <meta name="description" content="Explore Cascarino's full menu with classic brick oven pizzas, pasta, appetizers, desserts, and house favorites in Whitestone.">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="theme-color" content="#130f0f">
+    <meta property="og:title" content="Menu | Cascarino's Brick Oven Pizzeria">
+    <meta property="og:description" content="Explore Cascarino's full menu of brick oven pizzas and Italian favorites in Whitestone, NY.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cascarino's Brick Oven Pizzeria">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="225">
+    <meta property="og:image:height" content="225">
+    <meta property="og:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Menu | Cascarino's Brick Oven Pizzeria">
+    <meta name="twitter:description" content="Brick oven pizza and Italian favorites in Whitestone, NY.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
+    <meta name="twitter:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="225x225">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png" sizes="225x225">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,8 +65,7 @@
             position: absolute;
             inset: 0;
             z-index: -2;
-            background: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=80') center / cover no-repeat;
-            filter: brightness(0.52) saturate(1.08);
+            background: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=72') center / cover no-repeat;
         }
 
         .menu-hero::after {
@@ -189,8 +208,7 @@
 <body>
     <header class="floating-header">
         <a class="brand" href="index.html#home" aria-label="Back to home">
-            <span class="brand-main">Cascarino's</span>
-            <span class="brand-sub">Brick Oven Pizzeria</span>
+            <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="brand-logo" width="225" height="225" fetchpriority="high">
         </a>
         <a class="top-cta" href="tel:+17187464370">Call to Order</a>
     </header>
@@ -305,6 +323,6 @@
         <p>152-59 10th Ave, Whitestone, NY 11357</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
