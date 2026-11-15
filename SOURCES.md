@@ -10,9 +10,11 @@ Existing user repo `Madmonk2523/Cascarinos` identifies 152-59 10th Avenue, White
 
 Menu names from https://www.cascarinosmenu.com/ and https://ordering.slicelife.com/restaurants/ny/whitestone/11357/cascarino-s-pizza/menu . Prices deliberately omitted because duplicate menu entries differ and platform prices may change. Displayed hours explicitly describe online ordering (10:45 AM–8:45 PM daily), not guaranteed dine-in hours; visitors are told to call for holiday/dine-in hours. Current payment, delivery, pickup choices remain with the restaurant’s ordering service.
 
-## Photos
+## Historical photos (superseded)
 
-Images are genuine assets linked by the restaurant’s Slice storefront. They are not stock or generated food. Their public availability does not prove a reuse license. This is a private review build; obtain restaurant permission/confirmation of rights before public launch.
+The following images were used in the initial private review build and were replaced by the November 15 editorial redesign. They are not the current page photography.
+
+These were genuine assets linked by the restaurant’s Slice storefront. They were not stock or generated food. Their public availability does not prove a reuse license. Their use would require restaurant permission/confirmation of rights before public launch.
 
 - `assets/pizza.webp`: https://slice-menu-assets-prod.imgix.net/1263/1608835021_20cdde0799 (cheese pizza)
 - `assets/margherita.webp`: https://slice-menu-assets-prod.imgix.net/1263/1608835768_487b6244e0 (Margherita)
