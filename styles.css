@@ -74,3 +74,7 @@
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.button:hover{transform:translateY(-2px);box-shadow:0 5px 0 #28221e14}}
 @media(min-width:761px){#menu-list{min-height:620px}}
 @media(prefers-reduced-motion:reduce){.button:hover{transform:none}.final-cta>a:after{transition:none}.mobile-nav:not([hidden]){animation:none}}
+
+/* Genuine licensed photograph: frame the pizza rather than the oven hardware. */
+.hero-art img{object-position:50% 57%}
+@media(max-width:760px){.hero-art img{object-position:50% 57%}}

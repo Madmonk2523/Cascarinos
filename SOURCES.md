@@ -36,3 +36,9 @@ Logo copied unchanged from the user's existing Cascarinos repository main/logo.j
 
 ### Menu expansion, November 15
 Current live Toast page rechecked. Pizza, pasta, starters and dessert names copied as listed, without prices. No current verified Instagram or reusable owner photos established. Existing licensed illustrative photos retained. No paid assets, animation services or libraries used.
+
+
+### Genuine photography replacement
+Removed AI-edited hero November 15 at Chase's request. Replacement: James Collington, https://www.pexels.com/photo/freshly-baked-cheese-pizza-in-commercial-oven-29964612/ (Pexels license https://www.pexels.com/license/). Actual photograph, compressed to WebP only. Not restaurant-specific; disclosed as illustrative. Hero alt text no longer describes the pictured oven as wood-fired.
+
+Additional real photographs: menu pizza Cansu Hangül https://www.pexels.com/photo/pizza-with-melted-cheese-20483147/ and tiramisu K Zoltan https://www.pexels.com/photo/close-up-shot-of-a-delicious-tiramisu-on-a-plate-12035685/. Free Pexels license, compressed only, no generative changes.
