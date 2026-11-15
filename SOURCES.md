@@ -42,3 +42,7 @@ Current live Toast page rechecked. Pizza, pasta, starters and dessert names copi
 Removed AI-edited hero November 15 at Chase's request. Replacement: James Collington, https://www.pexels.com/photo/freshly-baked-cheese-pizza-in-commercial-oven-29964612/ (Pexels license https://www.pexels.com/license/). Actual photograph, compressed to WebP only. Not restaurant-specific; disclosed as illustrative. Hero alt text no longer describes the pictured oven as wood-fired.
 
 Additional real photographs: menu pizza Cansu Hangül https://www.pexels.com/photo/pizza-with-melted-cheese-20483147/ and tiramisu K Zoltan https://www.pexels.com/photo/close-up-shot-of-a-delicious-tiramisu-on-a-plate-12035685/. Free Pexels license, compressed only, no generative changes.
+
+
+### Latest direction: restore warm oven imagery
+At Chase's explicit request, replaced the industrial-oven hero with newly generated/edited illustration based on the original Eneida Nieves oven photograph. New menu pizza is generated. Both visually inspected for irregular blistered crust and natural cheese texture, and disclosed on-site as AI-created illustrative imagery. Other licensed photographs retained. No restaurant authenticity claim.
