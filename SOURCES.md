@@ -4,11 +4,11 @@ Checked November 15, 2026.
 
 ## Correct restaurant
 
-Existing user repo `Madmonk2523/Cascarinos` identifies 152-59 10th Avenue, Whitestone NY 11357. Matched to the restaurant’s Slice storefront https://www.cascarinosmenu.com/ and Toast listing https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order . Telephone (718) 746-4370.
+Existing user repo `Madmonk2523/Cascarinos` identifies 152-59 10th Avenue, Whitestone NY 11357. User correction on November 15: cascarinosmenu.com belongs to previous owners and is inactive/unused. Do not link or derive current menu from it. Matched the current Toast listing https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order . Telephone (718) 746-4370.
 
 ## Menu and hours
 
-Menu names from https://www.cascarinosmenu.com/ and https://ordering.slicelife.com/restaurants/ny/whitestone/11357/cascarino-s-pizza/menu . Prices deliberately omitted because duplicate menu entries differ and platform prices may change. Displayed hours explicitly describe online ordering (10:45 AM–8:45 PM daily), not guaranteed dine-in hours; visitors are told to call for holiday/dine-in hours. Current payment, delivery, pickup choices remain with the restaurant’s ordering service.
+Current menu names verified from https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order on November 15, 2026, matching the exact Whitestone street address. All pickup/delivery buttons route directly to Toast. Prices omitted so Toast stays authoritative. Ordering hours shown on Toast daily 10:45 AM–8:45 PM; not guaranteed dine-in/holiday hours. Old Slice menus are superseded and must not be used for current content.
 
 ## Historical photos (superseded)
 
@@ -27,4 +27,4 @@ Original source photography has varying resolution; not portrayed as a new photo
 No current owner names, founding date, Mets/Citi Field affiliations, social handle, awards or customer quotations were reliably confirmed. College Point Cascarino’s history must not be merged with Whitestone. No old repo review quotes or unsourced menu prices carried forward. No claim of fresh dough daily, family ownership or legal accessibility compliance.
 
 ## November 15 editorial redesign
-Licensed illustrative photography replaces the earlier images; these are not Cascarino’s actual dishes or kitchen. See photography.html for exact source URLs and licenses. Local WebP files preserve the source content, with resizing/compression only. No fabricated reviews, venue photographs or founding claims added.
+Licensed illustrative photography replaces the earlier images; these are not Cascarino’s actual dishes or kitchen. See photography.html for exact source URLs and licenses. The oven image was AI-edited at Chase’s request on November 15 to remove green vegetable toppings; disclosed on the photography credits page. Other local WebP files preserve source content with resizing/compression only. No fabricated reviews, venue photographs or founding claims added.
