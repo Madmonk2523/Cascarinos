@@ -32,3 +32,7 @@ Licensed illustrative photography replaces the earlier images; these are not Cas
 
 ### Logo provenance, November 15 update
 Logo copied unchanged from the user's existing Cascarinos repository main/logo.jpg (225 x 225). This is the existing project brand asset, not a recreation or a logo from another location. Current-owner use is not independently reconfirmed; confirm branding at public launch.
+
+
+### Menu expansion, November 15
+Current live Toast page rechecked. Pizza, pasta, starters and dessert names copied as listed, without prices. No current verified Instagram or reusable owner photos established. Existing licensed illustrative photos retained. No paid assets, animation services or libraries used.
