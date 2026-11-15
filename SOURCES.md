@@ -23,3 +23,6 @@ Original source photography has varying resolution; not portrayed as a new photo
 ## Deliberately excluded
 
 No current owner names, founding date, Mets/Citi Field affiliations, social handle, awards or customer quotations were reliably confirmed. College Point Cascarino’s history must not be merged with Whitestone. No old repo review quotes or unsourced menu prices carried forward. No claim of fresh dough daily, family ownership or legal accessibility compliance.
+
+## November 15 editorial redesign
+Licensed illustrative photography replaces the earlier images; these are not Cascarino’s actual dishes or kitchen. See photography.html for exact source URLs and licenses. Local WebP files preserve the source content, with resizing/compression only. No fabricated reviews, venue photographs or founding claims added.
