@@ -14,3 +14,5 @@ test('menu renders safely and all four categories work',()=>{let children=[];con
 test('build outputs complete',()=>{for(const file of ['index.html','styles.css','script.js','privacy.html','accessibility.html','assets/pizza.webp','assets/margherita.webp','assets/cannoli.webp'])assert.ok(fs.existsSync('dist/'+file),file);});
 test('motion is progressive, no dependencies or forced scrolling',()=>{assert.match(js,/prefers-reduced-motion/);assert.match(js,/IntersectionObserver/);assert.match(css,/animation-timeline:scroll/);assert.ok(!js.includes('preventDefault'));assert.ok(!js.includes('scrollTo('));assert.ok(!css.includes('opacity:0}'));});
 test('brand and no-price menu remain available',()=>{assert.equal((html.match(/assets\/logo.jpg/g)||[]).length,2);assert.ok(!/\$\d/.test(js));assert.ok(!html.includes('cascarinosmenu.com'));});
+
+test('no decorative arrows anywhere in pages',()=>{for(const name of fs.readdirSync('.').filter(n=>n.endsWith('.html')))assert.ok(!/[↓↗↑←→]/.test(fs.readFileSync(name,'utf8')),name);});
