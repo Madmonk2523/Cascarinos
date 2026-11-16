@@ -46,3 +46,7 @@ Additional real photographs: menu pizza Cansu Hangül https://www.pexels.com/pho
 
 ### Latest direction: restore warm oven imagery
 At Chase's explicit request, replaced the industrial-oven hero with newly generated/edited illustration based on the original Eneida Nieves oven photograph. New menu pizza is generated. Both visually inspected for irregular blistered crust and natural cheese texture, and disclosed on-site as AI-created illustrative imagery. Other licensed photographs retained. No restaurant authenticity claim.
+
+## November 16, 2026 visual upgrade
+- `assets/oven-hero.webp`, `assets/penne-vodka.webp`, `assets/catering-pasta.webp`: AI-generated editorial illustrations commissioned for this redesign. They are not photographs of Cascarino’s actual dishes, premises or catering offerings. Their illustrative status is disclosed in image alt text, footer and photography page.
+- Existing 28-item, price-free Toast menu selection and links retained. No new factual business or provenance claims were introduced.
