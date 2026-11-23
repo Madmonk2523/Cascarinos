@@ -1,21 +1,129 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Menu | Cascarino’s</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f8f1e4">
+  <meta name="description" content="Browse Cascarino’s brick oven pizza, pasta, starters and desserts in Whitestone, Queens.">
+  <title>Menu | Cascarino’s Brick Oven Pizzeria &amp; Ristorante</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="menu.css">
+  <script src="menu-page.js" defer></script>
 </head>
-<body>
-<main class="legal">
-<a href="index.html">Cascarino’s</a>
-<h1>The menu</h1>
-<p>Explore brick oven pies, squares, Italian favorites and dessert.</p>
-<p>
-<a class="button" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">View the current menu & order </a>
-</p>
-<p>For questions about food allergies, call <a href="tel:+17187464370">(718) 746-4370</a> before ordering.</p>
-</main>
+<body class="menu-page">
+  <a href="#menu-main" class="menu-skip">Skip to the menu</a>
+  <header class="menu-header">
+    <div class="menu-shell menu-header-inner">
+      <a class="menu-brand" href="index.html" aria-label="Cascarino’s home">
+        <img src="assets/logo.webp" alt="Cascarino’s Brick Oven Pizzeria &amp; Ristorante" width="336" height="209">
+      </a>
+      <nav aria-label="Main navigation" class="menu-nav">
+        <a href="index.html">Home</a>
+        <a href="tel:+17187464370">Call<span class="menu-nav-number"> (718) 746-4370</span></a>
+        <a class="menu-order" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order on Toast</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="menu-main" class="menu-shell" tabindex="-1">
+    <header class="menu-intro">
+      <div>
+        <p class="menu-kicker">CASCARINO’S · WHITESTONE, QUEENS</p>
+        <h1>Our menu</h1>
+        <p class="menu-deck">Brick oven pizza, Grandma pies, pasta and Italian favorites.</p>
+      </div>
+      <address class="menu-address">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Cascarinos+152-59+10th+Ave+Whitestone+NY+11357">152-59 10th Avenue<br>Whitestone, NY 11357</a>
+        <a href="tel:+17187464370">(718) 746-4370</a>
+      </address>
+    </header>
+
+    <div class="menu-controls">
+      <nav class="menu-jump" aria-label="Jump to a menu category">
+        <a href="#pizza">Pizza</a>
+        <a href="#pasta">Pasta</a>
+        <a href="#starters">Starters</a>
+        <a href="#desserts">Desserts</a>
+      </nav>
+      <div class="menu-search" role="search" aria-label="Search menu" hidden>
+        <label for="menu-query">Find a dish</label>
+        <div class="menu-search-row">
+          <input id="menu-query" type="search" placeholder="Try “vodka” or “tiramisu”" autocomplete="off" aria-controls="dish-list">
+          <button type="button" id="menu-reset" hidden>Clear</button>
+        </div>
+        <p id="menu-count" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div id="dish-list" class="menu-categories">
+      <section id="pizza" class="menu-category" aria-labelledby="pizza-title">
+        <h2 id="pizza-title" tabindex="-1">Pizza</h2>
+        <ul class="menu-dishes">
+          <li>12&quot; Cheese</li>
+          <li>12&quot; Margherita</li>
+          <li>12&quot; Pepperoni</li>
+          <li>12&quot; Buffalo Chicken</li>
+          <li>Cascarinos Famous Grandma</li>
+          <li>MVP Grandma</li>
+          <li>Vodka Grandma</li>
+          <li>Upside Down Sicilian</li>
+        </ul>
+      </section>
+      <section id="pasta" class="menu-category" aria-labelledby="pasta-title">
+        <h2 id="pasta-title" tabindex="-1">Pasta</h2>
+        <ul class="menu-dishes">
+          <li>Baked Ziti</li>
+          <li>Cheese Ravioli</li>
+          <li>Gnocchi Sorrentino</li>
+          <li>Homemade Lasagna</li>
+          <li>Lobster Ravioli Vodka</li>
+          <li>Penne Vodka</li>
+          <li>Rigatoni Florentine</li>
+          <li>Spaghetti &amp; Meatballs</li>
+        </ul>
+      </section>
+      <section id="starters" class="menu-category" aria-labelledby="starters-title">
+        <h2 id="starters-title" tabindex="-1">Starters</h2>
+        <ul class="menu-dishes">
+          <li>Arancini Rice Ball</li>
+          <li>Bruschetta</li>
+          <li>Calamari Fritti</li>
+          <li>Clams Oreganata</li>
+          <li>Eggplant Rollatini</li>
+          <li>Mozzarella Sticks</li>
+        </ul>
+      </section>
+      <section id="desserts" class="menu-category" aria-labelledby="desserts-title">
+        <h2 id="desserts-title" tabindex="-1">Desserts</h2>
+        <ul class="menu-dishes">
+          <li>Cannoli</li>
+          <li>Chocolate Fudge Cake</li>
+          <li>NY Cheesecake</li>
+          <li>Pistachio Ricotta Cake</li>
+          <li>Tartufo</li>
+          <li>Tiramisu</li>
+        </ul>
+      </section>
+    </div>
+    <p class="menu-empty" id="menu-empty" hidden>No matching dishes. Try a different search or browse the current menu on Toast.</p>
+
+    <aside class="menu-end" aria-label="Ordering and allergy information">
+      <div>
+        <h2>Order pickup or delivery</h2>
+        <p>This page shows a selection. See Toast for the full menu, current prices and availability.</p>
+        <p>For food allergies, please call <a href="tel:+17187464370">(718) 746-4370</a> before ordering.</p>
+      </div>
+      <a class="menu-order" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">View full menu on Toast</a>
+    </aside>
+  </main>
+  <footer class="menu-footer">
+    <div class="menu-shell">
+      <a href="index.html">Cascarino’s home</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#menu-main">Back to top</a>
+    </div>
+  </footer>
 </body>
 </html>
