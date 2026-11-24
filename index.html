@@ -10,6 +10,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/cormorant.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script type="module" src="cover-scroll.mjs"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Cascarino’s Brick Oven Pizzeria & Ristorante","telephone":"+1-718-746-4370","address":{"@type":"PostalAddress","streetAddress":"152-59 10th Avenue","addressLocality":"Whitestone","addressRegion":"NY","postalCode":"11357","addressCountry":"US"},"servesCuisine":["Pizza","Italian"],"hasMenu":"https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order"}</script>
 </head>
 <body>
@@ -22,19 +23,23 @@
   </div>
 </header>
 <main id="main">
+  <div class="cover-sequence" data-cover-sequence>
   <section class="cover" aria-labelledby="hero-title">
     <div class="cover-photo">
-      <img src="assets/cheese-pie-1400.webp" srcset="assets/cheese-pie-640.webp 640w, assets/cheese-pie-1400.webp 1400w" sizes="(max-width: 760px) 100vw, 68vw" alt="Cheese pizza on a dark wooden table, illustrative photograph" width="1400" height="933" fetchpriority="high" decoding="async">
+      <img class="cover-still" src="assets/table-pizza-1100.webp" srcset="assets/table-pizza-560.webp 560w, assets/table-pizza-1100.webp 1100w" sizes="(max-width: 760px) 100vw, 68vw" alt="Cheese pizza on a wooden table, illustrative photograph" width="1100" height="1254" fetchpriority="high" decoding="async">
+      <img class="cover-scene prep-scene" data-cover-scene data-src="assets/pizza-prep-1100.webp" data-srcset="assets/pizza-prep-560.webp 560w, assets/pizza-prep-1100.webp 1100w" sizes="(max-width: 760px) 100vw, 68vw" alt="" aria-hidden="true" width="1100" height="1254" decoding="async" fetchpriority="low">
+      <img class="cover-scene oven-scene" data-cover-scene data-src="assets/brick-oven-1280.webp" data-srcset="assets/brick-oven-560.webp 560w, assets/brick-oven-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 68vw" alt="" aria-hidden="true" width="1280" height="853" decoding="async" fetchpriority="low">
     </div>
     <div class="frame cover-inner">
       <div class="cover-copy">
         <p class="kicker">Whitestone, Queens</p>
-        <h1 id="hero-title">Brick oven<br><em>pizza.</em></h1>
+        <h1 id="hero-title">Brick oven<br> <em>pizza.</em></h1>
         <p class="cover-deck">Cheese pies, Grandma squares and Italian favorites on 10th Avenue.</p>
         <div class="actions"><a class="btn light" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a><a class="cover-link" href="menu.html">Browse the menu</a></div>
       </div>
     </div>
   </section>
+  </div>
   <div class="address-strip">
     <div class="frame address-inner">
       <a href="#visit"><span>Find us</span>152-59 10th Avenue</a>

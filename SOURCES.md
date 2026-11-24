@@ -58,3 +58,7 @@ Ordering, location, logo and category names use the current Cascarino’s Whites
 ## November 24 editorial rebuild (supersedes the earlier imagery)
 
 The live demo build serves one food photograph, [Four Cheese Pizza by Anhelina Vasylyk](https://www.pexels.com/photo/rustic-four-cheese-pizza-on-wooden-table-33592983/), under the [Pexels license](https://www.pexels.com/license/). It is stocked in two local WebP sizes and is not a photo of Cascarino’s food or premises. The menu, catering and visit sections use type and layout instead of illustrative dish or venue assets. No generated image is included in the deployed build. The current Toast logo, ordering, menu verification and shop phone are unchanged. Cormorant Garamond is self-hosted under the SIL Open Font License included with the build.
+
+## November 24 scroll sequence
+
+Three licensed Pexels photographs replace the single cover: Anhelina Vasylyk (34413625), Mathias Reding (9685263), and Antonius Ferret (6223172). The images are illustrative, not Cascarino’s staff, food or kitchen, and are resized/cropped only. The cover uses native scroll position to dissolve between the photographs, without autoplay, zoom, or a video. Reduced-motion and script-off visitors receive a static cover. Photo credits include the source links and license. No generated images are deployed. Toast, the standalone menu and the contact details remain in place.
