@@ -1,13 +1,14 @@
+@font-face { font-family: Cormorant; src: url("assets/cormorant.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
 :root {
   color-scheme: light;
-  --menu-cream: #f8f1e4;
-  --menu-paper: #fdf8ef;
+  --menu-cream: #f8f2e8;
+  --menu-paper: #fffaf2;
   --menu-ink: #30221d;
   --menu-muted: #5b4e44;
-  --menu-red: #9d3327;
-  --menu-green: #344938;
+  --menu-red: #722b2d;
+  --menu-green: #303f32;
   --menu-border: #cfc3b1;
-  --menu-serif: Georgia, "Times New Roman", serif;
+  --menu-serif: Cormorant, Georgia, serif;
   --menu-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -35,7 +36,7 @@ button, input { font: inherit; }
 .menu-intro { display: grid; grid-template-columns: 1fr auto; align-items: end; column-gap: 2rem; row-gap: 1.4rem; padding-block: clamp(2.55rem, 7vw, 5.75rem) clamp(1.8rem, 5vw, 3.7rem); }
 .menu-kicker, .menu-search label { color: var(--menu-green); font-size: .77rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
 .menu-kicker { margin: 0 0 .65rem; }
-.menu-intro h1 { margin: 0; color: var(--menu-ink); font: 400 clamp(3.6rem, 11vw, 8rem)/.94 var(--menu-serif); letter-spacing: -.065em; }
+.menu-intro h1 { margin: 0; color: var(--menu-ink); font: 600 clamp(3.6rem, 11vw, 8rem)/.94 var(--menu-serif); letter-spacing: -.065em; }
 .menu-deck { margin: 1rem 0 0; color: var(--menu-muted); max-width: 29rem; }
 .menu-address { display: grid; text-align: right; font-style: normal; font-size: .94rem; color: var(--menu-green); }
 .menu-address a + a { margin-top: .32rem; white-space: nowrap; }
@@ -54,7 +55,7 @@ button, input { font: inherit; }
 .menu-search [role="status"]:empty { margin: 0; }
 .menu-categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.7rem clamp(1.8rem, 7vw, 6rem); margin-block: 2.65rem 3.3rem; }
 .menu-category { scroll-margin-top: 1.25rem; border-top: 2px solid var(--menu-green); padding-top: .75rem; min-width: 0; }
-.menu-category h2, .menu-end h2 { margin: 0; color: var(--menu-green); font: 400 clamp(2rem, 5vw, 3rem)/1.1 var(--menu-serif); letter-spacing: -.045em; }
+.menu-category h2, .menu-end h2 { margin: 0; color: var(--menu-green); font: 600 clamp(2rem, 5vw, 3rem)/1.1 var(--menu-serif); letter-spacing: -.045em; }
 .menu-category:target h2 { color: var(--menu-red); }
 .menu-dishes { list-style: none; padding: 0; margin: .6rem 0 0; }
 .menu-dishes li { display: block; min-height: 2.8rem; padding: .57rem 0; border-bottom: 1px solid var(--menu-border); overflow-wrap: anywhere; }

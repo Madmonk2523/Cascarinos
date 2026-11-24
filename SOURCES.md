@@ -54,3 +54,7 @@ At Chase's explicit request, replaced the industrial-oven hero with newly genera
 ## November 23 review build
 
 Ordering, location, logo and category names use the current Cascarino’s Whitestone storefront on Toast. No legacy Slice links are present in the served pages. The hours on Toast differ for pickup and delivery, so the site refers readers to Toast rather than hard-coding hours. Confirm restaurant approval of branding and assets before launch. The displayed food images are illustrative, as disclosed in the footer and photo credits.
+
+## November 24 editorial rebuild (supersedes the earlier imagery)
+
+The live demo build serves one food photograph, [Four Cheese Pizza by Anhelina Vasylyk](https://www.pexels.com/photo/rustic-four-cheese-pizza-on-wooden-table-33592983/), under the [Pexels license](https://www.pexels.com/license/). It is stocked in two local WebP sizes and is not a photo of Cascarino’s food or premises. The menu, catering and visit sections use type and layout instead of illustrative dish or venue assets. No generated image is included in the deployed build. The current Toast logo, ordering, menu verification and shop phone are unchanged. Cormorant Garamond is self-hosted under the SIL Open Font License included with the build.

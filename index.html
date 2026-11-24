@@ -8,6 +8,7 @@
 <title>Cascarino’s | Brick Oven Pizza in Whitestone</title>
 <meta name="description" content="Cascarino’s Brick Oven Pizzeria &amp; Ristorante in Whitestone, Queens. Browse pizza, pasta and Italian favorites or order pickup and delivery on Toast.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/cormorant.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Cascarino’s Brick Oven Pizzeria & Ristorante","telephone":"+1-718-746-4370","address":{"@type":"PostalAddress","streetAddress":"152-59 10th Avenue","addressLocality":"Whitestone","addressRegion":"NY","postalCode":"11357","addressCountry":"US"},"servesCuisine":["Pizza","Italian"],"hasMenu":"https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order"}</script>
 </head>
@@ -21,41 +22,73 @@
   </div>
 </header>
 <main id="main">
-  <section class="hero frame" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="kicker"><span></span> Whitestone, Queens</p>
-      <h1 id="hero-title">Brick oven<br> pizza<span>.</span></h1>
-      <p class="hero-deck">Cheese pies, Grandma squares, and Italian favorites on 10th Avenue.</p>
-      <div class="actions"><a class="btn" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a><a class="btn outline" href="menu.html">Browse menu</a></div>
-      <p class="hero-detail">Dine in, takeout &amp; delivery</p>
+  <section class="cover" aria-labelledby="hero-title">
+    <div class="cover-photo">
+      <img src="assets/cheese-pie-1400.webp" srcset="assets/cheese-pie-640.webp 640w, assets/cheese-pie-1400.webp 1400w" sizes="(max-width: 760px) 100vw, 68vw" alt="Cheese pizza on a dark wooden table, illustrative photograph" width="1400" height="933" fetchpriority="high" decoding="async">
     </div>
-    <figure class="hero-image"><img src="assets/oven.webp" alt="Illustration of a plain cheese pizza on a peel at the brick oven" width="1535" height="1025" fetchpriority="high"></figure>
-  </section>
-  <div class="frame shop-info"><a href="#visit"><span>Find us</span>152-59 10th Avenue</a><a href="tel:+17187464370"><span>Call the shop</span>(718) 746-4370</a></div>
-  <section class="frame menu-shelf" aria-labelledby="menu-title">
-    <div class="section-head"><div><p class="kicker"><span></span> On the menu</p><h2 id="menu-title">Pies, pasta &amp; more.</h2></div><a class="btn outline" href="menu.html">Browse the menu</a></div>
-    <div class="shelf-grid">
-      <article class="dish"><a href="menu.html#pizza"><div class="dish-photo pizza-photo"><img src="assets/menu-pizza.webp" alt="Illustrative cheese pizza with a slice cut" width="768" height="1152" loading="lazy"></div><div class="dish-copy"><h3>Pizza</h3><p>Classic cheese, Grandma squares and specialty pies.</p><span>See pizzas</span></div></a></article>
-      <article class="dish"><a href="menu.html#pasta"><div class="dish-photo pasta-photo"><img src="assets/penne-vodka.webp" alt="Illustrative bowl of penne vodka" width="768" height="1152" loading="lazy"></div><div class="dish-copy"><h3>Pasta &amp; entrées</h3><p>Penne vodka, parmigiana and baked pasta.</p><span>See pasta &amp; entrées</span></div></a></article>
-      <article class="dish"><a href="menu.html#desserts"><div class="dish-photo sweet-photo"><img src="assets/tiramisu.webp" alt="Illustrative tiramisu on a plate" width="1200" height="800" loading="lazy"></div><div class="dish-copy"><h3>Dessert</h3><p>Cannoli, tiramisu and more.</p><span>See desserts</span></div></a></article>
+    <div class="frame cover-inner">
+      <div class="cover-copy">
+        <p class="kicker">Whitestone, Queens</p>
+        <h1 id="hero-title">Brick oven<br><em>pizza.</em></h1>
+        <p class="cover-deck">Cheese pies, Grandma squares and Italian favorites on 10th Avenue.</p>
+        <div class="actions"><a class="btn light" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a><a class="cover-link" href="menu.html">Browse the menu</a></div>
+      </div>
     </div>
   </section>
+  <div class="address-strip">
+    <div class="frame address-inner">
+      <a href="#visit"><span>Find us</span>152-59 10th Avenue</a>
+      <p>Dine in, takeout &amp; delivery</p>
+      <a href="tel:+17187464370"><span>Call</span>(718) 746-4370</a>
+    </div>
+  </div>
+
+  <section class="frame menu-chapter" aria-labelledby="menu-title">
+    <div class="chapter-intro">
+      <p class="kicker">The menu</p>
+      <h2 id="menu-title">From the oven<br><em>to the table.</em></h2>
+      <p>A round pie to split, a square slice or a plate of penne vodka. See what’s on the menu.</p>
+      <a class="line-link" href="menu.html">Explore the menu</a>
+    </div>
+    <div class="menu-lines">
+      <a href="menu.html#pizza"><div><h3>Pizza</h3><p>Cheese pies, Grandma squares and specialty pies.</p></div><span>See pizzas</span></a>
+      <a href="menu.html#pasta"><div><h3>Pasta &amp; entrées</h3><p>Penne vodka, baked ziti and chicken parm.</p></div><span>See pasta</span></a>
+      <a href="menu.html#starters"><div><h3>Starters</h3><p>Garlic knots, fried calamari and mozzarella sticks.</p></div><span>See starters</span></a>
+      <a href="menu.html#desserts"><div><h3>Desserts</h3><p>Cannoli, tiramisu and more.</p></div><span>See desserts</span></a>
+    </div>
+  </section>
+
   <section class="catering" id="catering" aria-labelledby="catering-title">
     <div class="frame catering-inner">
-      <div><p class="kicker"><span></span> Catering</p><h2 id="catering-title">Feeding a crowd?</h2><p>Pasta trays, salads, heroes and Italian entrées for family parties or office lunches. Call the shop to plan quantities and pickup.</p><a class="btn light" href="tel:+17187464370">Call about catering</a></div>
-      <figure><img src="assets/catering-pasta.webp" alt="Illustrative tray of baked pasta" width="768" height="1152" loading="lazy"></figure>
+      <div>
+        <p class="kicker">Catering</p>
+        <h2 id="catering-title">Pasta trays.<br><em>Heroes by the foot.</em></h2>
+        <p>Feeding a crowd? Call the shop to talk through the menu, portions and pickup.</p>
+        <a class="btn light" href="tel:+17187464370">Call about catering</a>
+      </div>
+      <div class="catering-card">
+        <p class="kicker">The catering menu</p>
+        <ul><li>Antipasti &amp; salads</li><li>Baked pasta &amp; Italian entrées</li><li>Heroes &amp; desserts</li></ul>
+      </div>
     </div>
   </section>
+
   <section class="frame visit" id="visit" aria-labelledby="visit-title">
-    <div><p class="kicker"><span></span> Visit Cascarino’s</p><h2 id="visit-title">On 10th Avenue.</h2></div>
-    <div><address>152-59 10th Avenue<br>Whitestone, NY 11357</address><p>See Toast for current pickup and delivery hours. Call for dine-in and holiday hours.</p><div class="actions"><a class="btn outline" href="https://www.google.com/maps/search/?api=1&amp;query=Cascarinos+152-59+10th+Ave+Whitestone+NY+11357">Get directions</a><a class="phone" href="tel:+17187464370">(718) 746-4370</a></div></div>
+    <div class="visit-mark" aria-hidden="true"><span>152-59</span><span>10th Avenue</span></div>
+    <div>
+      <p class="kicker">Visit Cascarino’s</p>
+      <h2 id="visit-title">On 10th Avenue.</h2>
+      <address>152-59 10th Avenue<br>Whitestone, NY 11357</address>
+      <p>See Toast for current pickup and delivery hours. Call for dine-in and holiday hours.</p>
+      <div class="actions"><a class="btn outline" href="https://www.google.com/maps/search/?api=1&amp;query=Cascarinos+152-59+10th+Ave+Whitestone+NY+11357">Get directions</a><a class="line-link" href="tel:+17187464370">(718) 746-4370</a></div>
+    </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="frame footer-inner">
     <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Cascarino’s" width="336" height="209" loading="lazy"></a>
     <p>Brick Oven Pizzeria &amp; Ristorante<br>Whitestone, Queens</p>
-    <nav aria-label="More information"><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><a href="photography.html">Illustrative photography</a></nav>
+    <nav aria-label="More information"><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><a href="photography.html">Photo credit</a></nav>
   </div>
 </footer>
 <div class="mobile-tools" aria-label="Quick actions"><a href="tel:+17187464370">Call</a><a class="btn" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a></div>

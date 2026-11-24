@@ -27,7 +27,12 @@ test('menu items are present without JavaScript',()=>{
 test('every image has an alt and intrinsic dimensions; photo credits disclose intent',()=>{
  for(const name of pages){for(const [img] of read(name).matchAll(/<img\b[^>]+>/g)){assert.match(img,/alt="[^"]+"/);assert.match(img,/width="\d+"/);assert.match(img,/height="\d+"/);}}
  assert.match(read('photography.html'),/not photography of Cascarino’s actual food/);
- assert.match(read('index.html'),/Illustration of a plain cheese pizza/);
+ assert.match(read('index.html'),/Cheese pizza on a dark wooden table, illustrative photograph/);
+ assert.match(read('photography.html'),/Anhelina Vasylyk/);
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>x.endsWith('.webp')).sort(), ['cheese-pie-1400.webp','cheese-pie-640.webp','logo.webp']);
+ for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
+   for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
+ }
 });
 test('site is legible without scroll motion or decorative arrows',()=>{
  const css=read('styles.css');assert.match(css,/prefers-reduced-motion/);assert.match(css,/:focus-visible/);
