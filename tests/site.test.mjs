@@ -58,3 +58,11 @@ test('the five-second cover edits from the opening still to one continuous movin
  assert.doesNotMatch(read('cover-scroll.mjs'),/scale\(|setInterval|preventDefault|\.play\(/);
  assert.match(read('styles.css'),/has-cover-motion \.cover\{position:sticky/);
 });
+
+test('touch layouts account for safe areas and allow a direct exit from the film',()=>{
+ for (const page of ['index.html','menu.html']) assert.match(read(page),/viewport-fit=cover/);
+ assert.match(read('index.html'),/class="skip-cover" href="#after-cover">Skip film/);
+ assert.match(read('styles.css'),/--mobile-dock:calc\(62px \+ env\(safe-area-inset-bottom/);
+ assert.match(read('styles.css'),/orientation:landscape/);
+ assert.match(read('cover-scroll.mjs'),/allowed\.matches && fits\(\)/);
+});
