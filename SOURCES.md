@@ -70,3 +70,7 @@ Kept the restored November 24 editorial layout and its opening Anhelina Vasylyk 
 ## November 25 two-shot film cut
 
 The approved November 24 layout and original Anhelina Vasylyk opening still are retained. The final film uses two licensed live-action shots: Roman Odintsov (5899748, cheese being added) and Rene Strgar (30627970, a slice being pulled from a baked Margherita). Both clips are cropped, color matched and edited into one muted 24 fps local file with frequent keyframes for seeking. The Pexels sources are credited. No stock oven shot, animated zoom or autoplay is served. This is illustrative footage, not footage from the Whitestone restaurant.
+
+## November 25 finishing-shot edit
+
+Kept the original opening photo and site layout. The active scroll film is one continuous unbranded excerpt from [Close Up of a Person Adding Toppings and Cutting a Sourdough Pizza](https://www.pexels.com/video/close-up-of-a-person-adding-toppings-and-cutting-a-sourdough-pizza-15604809/) by Rene Strgar, under the Pexels license. The angled view, blistered crust and warm wood are a closer match for the poster; the hero never switches kitchens or pizza styles mid-film. No footage from Cascarino’s is claimed.

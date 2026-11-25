@@ -29,11 +29,10 @@ test('every image has an alt and intrinsic dimensions; photo credits disclose in
  for(const name of pages){for(const [img] of read(name).matchAll(/<img\b[^>]+>/g)){if(img.includes("data-cover-scene")){assert.match(img,/alt="" aria-hidden="true"/);}else{assert.match(img,/alt="[^"]+"/);}assert.match(img,/width="\d+"/);assert.match(img,/height="\d+"/);}}
  assert.match(read('photography.html'),/not footage or photography of Cascarino’s actual food/);
  assert.match(read('photography.html'),/Anhelina Vasylyk/);
- assert.match(read('photography.html'),/Roman Odintsov/);
  assert.match(read('photography.html'),/Rene Strgar/);
  assert.match(read('index.html'),/Cheese pizza on a wooden table, illustrative photograph/);
- assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['cascarinos-scroll-film.mp4','logo.webp','table-pizza-1100.webp','table-pizza-560.webp']);
- assert.ok(fs.statSync(build+'assets/cascarinos-scroll-film.mp4').size < 1150000);
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['logo.webp','pizza-finishing-film.mp4','table-pizza-1100.webp','table-pizza-560.webp']);
+ assert.ok(fs.statSync(build+'assets/pizza-finishing-film.mp4').size < 1150000);
  for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
    for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
  }
@@ -44,7 +43,7 @@ test('site is legible without scroll motion or decorative arrows',()=>{
  assert.doesNotMatch(css,/scroll-snap|animation-timeline/);
 });
 
-test('the five-second cover edits from the opening still through two moving shots',()=>{
+test('the five-second cover edits from the opening still to one continuous moving shot',()=>{
  assert.equal(FILM_SECONDS,5);
  assert.deepEqual(filmFrame(-1),{opacity:0,shotProgress:0});
  assert.ok(filmFrame(.16).opacity>0 && filmFrame(.16).opacity<1);
