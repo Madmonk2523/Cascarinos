@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {coverMix} from '../cover-scroll.mjs';
+import {filmFrame, FILM_SECONDS} from '../cover-scroll.mjs';
 const build='dist/';
 const read=p=>fs.readFileSync(build+p,'utf8');
 const pages=['index.html','menu.html','privacy.html','accessibility.html','photography.html'];
@@ -27,10 +27,12 @@ test('menu items are present without JavaScript',()=>{
 });
 test('every image has an alt and intrinsic dimensions; photo credits disclose intent',()=>{
  for(const name of pages){for(const [img] of read(name).matchAll(/<img\b[^>]+>/g)){if(img.includes("data-cover-scene")){assert.match(img,/alt="" aria-hidden="true"/);}else{assert.match(img,/alt="[^"]+"/);}assert.match(img,/width="\d+"/);assert.match(img,/height="\d+"/);}}
- assert.match(read('photography.html'),/not photography of Cascarino’s actual food/);
+ assert.match(read('photography.html'),/not footage or photography of Cascarino’s actual food/);
+ assert.match(read('photography.html'),/Anhelina Vasylyk/);
+ assert.match(read('photography.html'),/Roman Odintsov/);
  assert.match(read('index.html'),/Cheese pizza on a wooden table, illustrative photograph/);
- for(const credit of ['Anhelina Vasylyk','Mathias Reding','Antonius Ferret'])assert.ok(read('photography.html').includes(credit));
- assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>x.endsWith('.webp')).sort(), ['brick-oven-1280.webp','brick-oven-560.webp','logo.webp','pizza-prep-1100.webp','pizza-prep-560.webp','table-pizza-1100.webp','table-pizza-560.webp']);
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['cheese-preparation.mp4','logo.webp','table-pizza-1100.webp','table-pizza-560.webp']);
+ assert.ok(fs.statSync(build+'assets/cheese-preparation.mp4').size < 600000);
  for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
    for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
  }
@@ -41,16 +43,18 @@ test('site is legible without scroll motion or decorative arrows',()=>{
  assert.doesNotMatch(css,/scroll-snap|animation-timeline/);
 });
 
-test('native scroll dissolves between real photographs and starts at a still',()=>{
- assert.deepEqual(coverMix(-1),[0,0]);
- assert.deepEqual(coverMix(0),[0,0]);
- assert.ok(coverMix(.19)[0] > 0 && coverMix(.19)[0] < 1);
- assert.deepEqual(coverMix(.40),[1,0]);
- assert.ok(coverMix(.65)[1] > 0 && coverMix(.65)[1] < 1);
- assert.deepEqual(coverMix(.9),[1,1]);
+test('the five-second cover edits from the opening still to one moving shot',()=>{
+ assert.equal(FILM_SECONDS,5);
+ assert.deepEqual(filmFrame(-1),{pan:50,opacity:0,shotProgress:0});
+ assert.ok(filmFrame(.32).opacity>0 && filmFrame(.32).opacity<1);
+ assert.ok(filmFrame(.75).shotProgress > filmFrame(.5).shotProgress);
+ assert.deepEqual(filmFrame(1),{pan:52.6,opacity:1,shotProgress:1});
  const html=read('index.html');
+ const video=html.match(/<video\b[^>]*>/g);
+ assert.equal(video?.length,1);
+ assert.match(video[0],/muted playsinline/);
+ assert.doesNotMatch(video[0],/autoplay| loop| src=/);
  for(const [,file] of html.matchAll(/data-src="([^"]+)"/g))assert.ok(fs.existsSync(build+file));
- assert.equal((html.match(/\bdata-cover-scene\b/g)||[]).length,2);
- assert.doesNotMatch(read('cover-scroll.mjs'),/scale\(|setInterval|preventDefault/);
+ assert.doesNotMatch(read('cover-scroll.mjs'),/scale\(|setInterval|preventDefault|\.play\(/);
  assert.match(read('styles.css'),/has-cover-motion \.cover\{position:sticky/);
 });

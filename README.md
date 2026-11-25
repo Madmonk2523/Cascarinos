@@ -12,7 +12,7 @@ A complete, buildless-first redesign for the Whitestone restaurant at 152-59 10t
 
 Warm ivory, brick red and editorial typography. Responsive menu category selector, mobile navigation with Escape dismissal, clear online ordering, call and directions links, reduced-motion support and keyboard focus states. Photos are local for predictable loading.
 
-No payment or order is taken by this site. Order actions go to the restaurant’s existing Slice-powered ordering site. No fabricated booking/contact forms. No invented testimonials or ratings.
+No payment or order is taken by this site. Order actions go to the restaurant’s existing Toast storefront. No fabricated booking/contact forms. No invented testimonials or ratings.
 
 ## Before business launch
 

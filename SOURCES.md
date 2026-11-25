@@ -62,3 +62,7 @@ The live demo build serves one food photograph, [Four Cheese Pizza by Anhelina V
 ## November 24 scroll sequence
 
 Three licensed Pexels photographs replace the single cover: Anhelina Vasylyk (34413625), Mathias Reding (9685263), and Antonius Ferret (6223172). The images are illustrative, not Cascarino’s staff, food or kitchen, and are resized/cropped only. The cover uses native scroll position to dissolve between the photographs, without autoplay, zoom, or a video. Reduced-motion and script-off visitors receive a static cover. Photo credits include the source links and license. No generated images are deployed. Toast, the standalone menu and the contact details remain in place.
+
+## November 25 scroll-film edit
+
+Kept the restored November 24 editorial layout and its opening Anhelina Vasylyk photograph. Removed the final oven photograph from the served site. A short, muted excerpt from Roman Odintsov's [Person Sprinkling Cheese on a Pizza](https://www.pexels.com/video/person-sprinkling-cheese-on-a-pizza-5899748/) replaces the static prep panel. It is authentic licensed footage, not footage of Cascarino’s. The five-second sequence scrubs forward and backward with native scroll, does not autoplay, and uses the opening photograph alone for reduced-motion, data-saving, unsupported video and no-script readers. The restaurant’s links and business information are unchanged.

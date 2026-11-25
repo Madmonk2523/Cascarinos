@@ -117,24 +117,21 @@ body:has(.mobile-tools){padding-bottom:calc(63px + env(safe-area-inset-bottom,0p
 @media(max-width:370px){.frame{width:calc(100% - 28px)}.cover h1{font-size:3.47rem}.menu-lines a{gap:.55rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
-/* A short scroll-controlled photo sequence. No zoom, scroll hijacking or autoplay. */
-.cover-still,.cover-scene{position:absolute;inset:0}
-.cover-photo .cover-still{object-position:50% 72%}
-.cover-photo .prep-scene{object-position:50% 68%}
-.cover-photo .oven-scene{object-position:50% 51%}
-.cover-photo .cover-scene{opacity:0;pointer-events:none}
+/* Native scroll scrubs the film; the opening still works on its own. */
+.cover-still,.cover-film{position:absolute;inset:0}
+.cover-photo .cover-still{object-position:var(--film-pan,50%) 72%}
+.cover-film{opacity:0;pointer-events:none;height:100%;width:100%;object-fit:cover;object-position:50% 60%}
 .cover-photo::after{z-index:1}
 .has-cover-motion .cover{position:sticky;top:0;min-height:100svh}
-.has-cover-motion::after{content:"";display:block;height:clamp(440px,76svh,760px)}
+.has-cover-motion::after{content:"";display:block;height:clamp(620px,124svh,1320px)}
 @media(max-width:760px){
-  .cover-photo .cover-still{object-position:50% 73%}
-  .cover-photo .prep-scene{object-position:50% 66%}
-  .cover-photo .oven-scene{object-position:50% 52%}
+  .cover-photo .cover-still{object-position:var(--film-pan,50%) 73%}
+  .cover-film{object-position:47% 60%}
   .has-cover-motion .cover{min-height:calc(100svh - 60px);display:grid;grid-template-rows:minmax(13rem,1fr) auto;align-items:stretch}
   .has-cover-motion .cover-photo{aspect-ratio:auto;max-height:none}
-  .has-cover-motion::after{height:clamp(380px,61svh,520px)}
+  .has-cover-motion::after{height:clamp(495px,96svh,970px)}
 }
 @media(prefers-reduced-motion:reduce){
   .has-cover-motion .cover{position:relative;min-height:0}
-  .has-cover-motion::after,.cover-photo .cover-scene{display:none}
+  .has-cover-motion::after,.cover-film{display:none}
 }
