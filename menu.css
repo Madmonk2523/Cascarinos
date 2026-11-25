@@ -1,12 +1,12 @@
 @font-face { font-family: Cormorant; src: url("assets/cormorant.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
 :root {
   color-scheme: light;
-  --menu-cream: #f8f2e8;
-  --menu-paper: #fffaf2;
-  --menu-ink: #30221d;
+  --menu-cream: #f7edde;
+  --menu-paper: #fff9ef;
+  --menu-ink: #271817;
   --menu-muted: #5b4e44;
-  --menu-red: #722b2d;
-  --menu-green: #303f32;
+  --menu-red: #891e29;
+  --menu-green: #53161c;
   --menu-border: #cfc3b1;
   --menu-serif: Cormorant, Georgia, serif;
   --menu-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
