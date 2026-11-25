@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {ovenTravel} from '../oven-scroll.mjs';
+import {coverMix} from '../cover-scroll.mjs';
 const build='dist/';
 const read=p=>fs.readFileSync(build+p,'utf8');
 const pages=['index.html','menu.html','privacy.html','accessibility.html','photography.html'];
@@ -25,17 +25,15 @@ test('menu items are present without JavaScript',()=>{
  for(const dish of ['Grandma','Penne Vodka','Tiramisu'])assert.ok(html.includes(dish));
  assert.doesNotMatch(html,/\$\d+/);
 });
-test('served photos are responsive, attributed and explicitly illustrative',()=>{
- for(const name of pages)for(const [img] of read(name).matchAll(/<img\b[^>]+>/g)){
-  assert.match(img,/alt="[^"]+"/);
-  assert.match(img,/width="\d+"/);
-  assert.match(img,/height="\d+"/);
+test('every image has an alt and intrinsic dimensions; photo credits disclose intent',()=>{
+ for(const name of pages){for(const [img] of read(name).matchAll(/<img\b[^>]+>/g)){if(img.includes("data-cover-scene")){assert.match(img,/alt="" aria-hidden="true"/);}else{assert.match(img,/alt="[^"]+"/);}assert.match(img,/width="\d+"/);assert.match(img,/height="\d+"/);}}
+ assert.match(read('photography.html'),/not photography of Cascarino’s actual food/);
+ assert.match(read('index.html'),/Cheese pizza on a wooden table, illustrative photograph/);
+ for(const credit of ['Anhelina Vasylyk','Mathias Reding','Antonius Ferret'])assert.ok(read('photography.html').includes(credit));
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>x.endsWith('.webp')).sort(), ['brick-oven-1280.webp','brick-oven-560.webp','logo.webp','pizza-prep-1100.webp','pizza-prep-560.webp','table-pizza-1100.webp','table-pizza-560.webp']);
+ for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
+   for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
  }
- assert.match(read('photography.html'),/not photos of Cascarino’s actual food/);
- for(const credit of ['Nikita Krasnov','Dario Garcia'])assert.ok(read('photography.html').includes(credit));
- assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>x.endsWith('.webp')).sort(),['logo.webp','print-slice-1100.webp','print-slice-640.webp','print-table-1560.webp','print-table-720.webp']);
- for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g))
-  for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
 });
 test('site is legible without scroll motion or decorative arrows',()=>{
  const css=read('styles.css');assert.match(css,/prefers-reduced-motion/);assert.match(css,/:focus-visible/);
@@ -43,15 +41,16 @@ test('site is legible without scroll motion or decorative arrows',()=>{
  assert.doesNotMatch(css,/scroll-snap|animation-timeline/);
 });
 
-test('native scroll reveals the second photo with bounded, reversible movement',()=>{
- assert.ok(Math.abs(ovenTravel(-1).door)===0);
- assert.ok(ovenTravel(.4).door < -30 && ovenTravel(.4).door > -80);
- assert.equal(ovenTravel(.9).door,-103);
- assert.equal(ovenTravel(2).photo,-3.4);
- const css=read('styles.css'), js=read('oven-scroll.mjs');
- assert.match(css,/\.has-oven-motion \.oven-frame\{position:sticky/);
- assert.match(css,/translateX\(var\(--door-shift/);
- assert.match(css,/prefers-reduced-motion:reduce/);
- assert.doesNotMatch(js,/scale\(|setInterval|preventDefault/);
- assert.match(read('index.html'),/class="oven-door" aria-hidden="true"/);
+test('native scroll dissolves between real photographs and starts at a still',()=>{
+ assert.deepEqual(coverMix(-1),[0,0]);
+ assert.deepEqual(coverMix(0),[0,0]);
+ assert.ok(coverMix(.19)[0] > 0 && coverMix(.19)[0] < 1);
+ assert.deepEqual(coverMix(.40),[1,0]);
+ assert.ok(coverMix(.65)[1] > 0 && coverMix(.65)[1] < 1);
+ assert.deepEqual(coverMix(.9),[1,1]);
+ const html=read('index.html');
+ for(const [,file] of html.matchAll(/data-src="([^"]+)"/g))assert.ok(fs.existsSync(build+file));
+ assert.equal((html.match(/\bdata-cover-scene\b/g)||[]).length,2);
+ assert.doesNotMatch(read('cover-scroll.mjs'),/scale\(|setInterval|preventDefault/);
+ assert.match(read('styles.css'),/has-cover-motion \.cover\{position:sticky/);
 });

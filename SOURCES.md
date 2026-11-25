@@ -62,7 +62,3 @@ The live demo build serves one food photograph, [Four Cheese Pizza by Anhelina V
 ## November 24 scroll sequence
 
 Three licensed Pexels photographs replace the single cover: Anhelina Vasylyk (34413625), Mathias Reding (9685263), and Antonius Ferret (6223172). The images are illustrative, not Cascarino’s staff, food or kitchen, and are resized/cropped only. The cover uses native scroll position to dissolve between the photographs, without autoplay, zoom, or a video. Reduced-motion and script-off visitors receive a static cover. Photo credits include the source links and license. No generated images are deployed. Toast, the standalone menu and the contact details remain in place.
-
-## November 25 print-inspired redesign
-
-The demo uses two illustrative photographs from Pexels: Nikita Krasnov (10267943) and Dario Garcia (6068712). Their exact sources and license are on the photo credits page. They are real photos, not taken at Cascarino’s; no AI imagery or legacy photos are in the distribution. The decorative oven drawing is original SVG. The oven door moves laterally to uncover the second photograph in a native-scroll chapter. The menu remains usable independently of the effect, and users with reduced motion or unavailable script get the static photo. All ordering, visit information and the catering phone remain unchanged.
