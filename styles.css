@@ -119,14 +119,14 @@ body:has(.mobile-tools){padding-bottom:calc(63px + env(safe-area-inset-bottom,0p
 
 /* Native scroll scrubs the film; the opening still works on its own. */
 .cover-still,.cover-film{position:absolute;inset:0}
-.cover-photo .cover-still{object-position:var(--film-pan,50%) 72%}
+.cover-photo .cover-still{object-position:50% 72%}
 .cover-film{opacity:0;pointer-events:none;height:100%;width:100%;object-fit:cover;object-position:50% 60%}
 .cover-photo::after{z-index:1}
 .has-cover-motion .cover{position:sticky;top:0;min-height:100svh}
 .has-cover-motion::after{content:"";display:block;height:clamp(620px,124svh,1320px)}
 @media(max-width:760px){
-  .cover-photo .cover-still{object-position:var(--film-pan,50%) 73%}
-  .cover-film{object-position:47% 60%}
+  .cover-photo .cover-still{object-position:50% 73%}
+  .cover-film{object-position:50% 56%}
   .has-cover-motion .cover{min-height:calc(100svh - 60px);display:grid;grid-template-rows:minmax(13rem,1fr) auto;align-items:stretch}
   .has-cover-motion .cover-photo{aspect-ratio:auto;max-height:none}
   .has-cover-motion::after{height:clamp(495px,96svh,970px)}
@@ -135,3 +135,7 @@ body:has(.mobile-tools){padding-bottom:calc(63px + env(safe-area-inset-bottom,0p
   .has-cover-motion .cover{position:relative;min-height:0}
   .has-cover-motion::after,.cover-film{display:none}
 }
+
+.skip-cover{display:none}
+.has-cover-motion .skip-cover{display:inline-flex;position:absolute;z-index:2;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.has-cover-motion .skip-cover:focus{width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal;background:#fff7ea;color:#351c16;padding:.45rem .65rem;left:1rem;bottom:1rem}

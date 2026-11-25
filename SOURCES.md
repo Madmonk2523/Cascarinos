@@ -66,3 +66,7 @@ Three licensed Pexels photographs replace the single cover: Anhelina Vasylyk (34
 ## November 25 scroll-film edit
 
 Kept the restored November 24 editorial layout and its opening Anhelina Vasylyk photograph. Removed the final oven photograph from the served site. A short, muted excerpt from Roman Odintsov's [Person Sprinkling Cheese on a Pizza](https://www.pexels.com/video/person-sprinkling-cheese-on-a-pizza-5899748/) replaces the static prep panel. It is authentic licensed footage, not footage of Cascarino’s. The five-second sequence scrubs forward and backward with native scroll, does not autoplay, and uses the opening photograph alone for reduced-motion, data-saving, unsupported video and no-script readers. The restaurant’s links and business information are unchanged.
+
+## November 25 two-shot film cut
+
+The approved November 24 layout and original Anhelina Vasylyk opening still are retained. The final film uses two licensed live-action shots: Roman Odintsov (5899748, cheese being added) and Rene Strgar (30627970, a slice being pulled from a baked Margherita). Both clips are cropped, color matched and edited into one muted 24 fps local file with frequent keyframes for seeking. The Pexels sources are credited. No stock oven shot, animated zoom or autoplay is served. This is illustrative footage, not footage from the Whitestone restaurant.

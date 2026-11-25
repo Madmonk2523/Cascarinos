@@ -2,13 +2,12 @@
 const clamp = n => Math.max(0, Math.min(1, n));
 const smooth = n => { const x = clamp(n); return x * x * (3 - 2 * x); };
 export const FILM_SECONDS = 5;
-const CAPTURE_FPS = 20;
+const CAPTURE_FPS = 24;
 export function filmFrame(progress) {
   const elapsed = FILM_SECONDS * clamp(progress);
   return {
-    pan: 50 + 2.6 * smooth(elapsed / 2.2),
-    opacity: smooth((elapsed - 1.28) / .87),
-    shotProgress: clamp((elapsed - 1.28) / (FILM_SECONDS - 1.28))
+    opacity: smooth((elapsed - .5) / .64),
+    shotProgress: clamp((elapsed - .5) / (FILM_SECONDS - .5))
   };
 }
 
@@ -23,6 +22,7 @@ function installFilm(sequence) {
   let loading = null;
   let failed = false;
   let initialFrame = false;
+  let mediaUrl = null;
   let active = false;
 
   function paint() {
@@ -30,13 +30,12 @@ function installFilm(sequence) {
     if (!active || !near) return;
     const rect = sequence.getBoundingClientRect();
     const travel = rect.height - stage.getBoundingClientRect().height;
-    const {pan, opacity, shotProgress} = filmFrame(travel > 0 ? -rect.top / travel : 0);
-    stage.style.setProperty('--film-pan', pan.toFixed(3) + '%');
+    const {opacity, shotProgress} = filmFrame(travel > 0 ? -rect.top / travel : 0);
     if (!Number.isFinite(film.duration) || film.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
     const last = Math.max(0, Math.ceil(film.duration * CAPTURE_FPS) - 1);
     const next = Math.round(shotProgress * last) / CAPTURE_FPS;
     if (initialFrame || !film.seeking) film.style.opacity = opacity.toFixed(4);
-    if (!film.seeking && Math.abs(next - film.currentTime) > .019) film.currentTime = next;
+    if (!film.seeking && Math.abs(next - film.currentTime) > 1 / (CAPTURE_FPS * 2)) film.currentTime = next;
     if (!film.seeking) initialFrame = true;
   }
 
@@ -50,7 +49,6 @@ function installFilm(sequence) {
     if (!active) {
       loading?.abort();
       loading = null;
-      stage.style.removeProperty('--film-pan');
       film.style.opacity = '0';
       return;
     }
@@ -71,9 +69,8 @@ function installFilm(sequence) {
           film.defaultMuted = true;
           film.muted = true;
           film.preload = 'auto';
-          const url = URL.createObjectURL(blob);
-          film.addEventListener('loadeddata', () => URL.revokeObjectURL(url), {once:true});
-          film.src = url;
+          mediaUrl = URL.createObjectURL(blob);
+          film.src = mediaUrl;
         })
         .catch(error => {
           if (error.name !== 'AbortError' && loading === controller) {
@@ -87,6 +84,7 @@ function installFilm(sequence) {
   }
 
   for (const event of ['loadeddata','canplay','seeked']) film.addEventListener(event, schedule);
+  addEventListener('pagehide', event => { if (!event.persisted && mediaUrl) URL.revokeObjectURL(mediaUrl); });
   film.addEventListener('error', () => { failed = true; sync(); });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => {

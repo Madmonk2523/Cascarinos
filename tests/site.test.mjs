@@ -30,9 +30,10 @@ test('every image has an alt and intrinsic dimensions; photo credits disclose in
  assert.match(read('photography.html'),/not footage or photography of Cascarino’s actual food/);
  assert.match(read('photography.html'),/Anhelina Vasylyk/);
  assert.match(read('photography.html'),/Roman Odintsov/);
+ assert.match(read('photography.html'),/Rene Strgar/);
  assert.match(read('index.html'),/Cheese pizza on a wooden table, illustrative photograph/);
- assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['cheese-preparation.mp4','logo.webp','table-pizza-1100.webp','table-pizza-560.webp']);
- assert.ok(fs.statSync(build+'assets/cheese-preparation.mp4').size < 600000);
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['cascarinos-scroll-film.mp4','logo.webp','table-pizza-1100.webp','table-pizza-560.webp']);
+ assert.ok(fs.statSync(build+'assets/cascarinos-scroll-film.mp4').size < 1150000);
  for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
    for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
  }
@@ -43,12 +44,12 @@ test('site is legible without scroll motion or decorative arrows',()=>{
  assert.doesNotMatch(css,/scroll-snap|animation-timeline/);
 });
 
-test('the five-second cover edits from the opening still to one moving shot',()=>{
+test('the five-second cover edits from the opening still through two moving shots',()=>{
  assert.equal(FILM_SECONDS,5);
- assert.deepEqual(filmFrame(-1),{pan:50,opacity:0,shotProgress:0});
- assert.ok(filmFrame(.32).opacity>0 && filmFrame(.32).opacity<1);
+ assert.deepEqual(filmFrame(-1),{opacity:0,shotProgress:0});
+ assert.ok(filmFrame(.16).opacity>0 && filmFrame(.16).opacity<1);
  assert.ok(filmFrame(.75).shotProgress > filmFrame(.5).shotProgress);
- assert.deepEqual(filmFrame(1),{pan:52.6,opacity:1,shotProgress:1});
+ assert.deepEqual(filmFrame(1),{opacity:1,shotProgress:1});
  const html=read('index.html');
  const video=html.match(/<video\b[^>]*>/g);
  assert.equal(video?.length,1);
