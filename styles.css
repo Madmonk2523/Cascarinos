@@ -132,33 +132,17 @@ html:has(.home-page){scroll-padding-bottom:var(--mobile-dock)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
-/* Native scroll scrubs the film; the opening still works on its own. */
-.cover-still,.cover-film{position:absolute;inset:0}
+/* Phones and touch tablets scrub frames in normal document flow. */
+.cover-still,.cover-film,.cover-frames{position:absolute;inset:0}
 .cover-photo .cover-still{object-position:50% 72%}
-.cover-film{opacity:0;pointer-events:none;height:100%;width:100%;object-fit:cover;object-position:50% 60%}
+.cover-film,.cover-frames{opacity:0;pointer-events:none;height:100%;width:100%;object-fit:cover;object-position:50% 60%}
 .cover-photo::after{z-index:1}
-.has-cover-motion .cover{position:sticky;top:0;min-height:100svh}
-.has-cover-motion::after{content:"";display:block;height:clamp(620px,124svh,1320px)}
+@media(min-width:761px) and (min-height:540px) and (prefers-reduced-motion:no-preference){
+  .has-cover-motion .cover{position:sticky;top:0;min-height:100svh}
+  .has-cover-motion::after{content:"";display:block;height:clamp(620px,124svh,1320px)}
+}
 @media(max-width:760px){
   .cover-photo .cover-still{object-position:50% 73%}
-  .cover-film{object-position:50% 56%}
-  .has-cover-motion .cover{top:env(safe-area-inset-top,0px);min-height:calc(100svh - var(--mobile-dock) - env(safe-area-inset-top,0px));display:grid;grid-template-rows:minmax(10rem,1fr) auto;align-items:stretch}
-  .has-cover-motion .cover-photo{aspect-ratio:auto;max-height:none}
-  .has-cover-motion::after{height:clamp(495px,96svh,970px)}
+  .cover-frames{object-position:50% 56%}
 }
-@media(prefers-reduced-motion:reduce){
-  .has-cover-motion .cover{position:relative;min-height:0}
-  .has-cover-motion::after,.cover-film{display:none}
-}
-
-.skip-cover{display:none}
-.has-cover-motion .skip-cover{display:inline-flex;position:absolute;z-index:2;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.has-cover-motion .skip-cover:focus{width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal;background:#fff7ea;color:#351c16;padding:.45rem .65rem;left:1rem;bottom:1rem}
-
-@media(max-width:760px){
-  .has-cover-motion .skip-cover,.has-cover-motion .skip-cover:focus{
-    top:.6rem;bottom:auto;left:auto;right:max(14px,env(safe-area-inset-right,0px));width:auto;height:auto;
-    min-height:44px;align-items:center;clip-path:none;padding:.45rem .65rem;
-    color:#fff7ea;background:#351c16e8;border:1px solid #fff7ea70;border-radius:2px;font-size:.81rem;
-  }
-}
+@media(prefers-reduced-motion:reduce){.cover-film,.cover-frames{display:none}}

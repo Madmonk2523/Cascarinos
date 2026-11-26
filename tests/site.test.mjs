@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {filmFrame, FILM_SECONDS} from '../cover-scroll.mjs';
+import {filmFrame, mobileFrame, MOBILE_FRAME_COUNT, FILM_SECONDS} from '../cover-scroll.mjs';
 const build='dist/';
 const read=p=>fs.readFileSync(build+p,'utf8');
 const pages=['index.html','menu.html','privacy.html','accessibility.html','photography.html'];
@@ -31,7 +31,7 @@ test('every image has an alt and intrinsic dimensions; photo credits disclose in
  assert.match(read('photography.html'),/Anhelina Vasylyk/);
  assert.match(read('photography.html'),/Rene Strgar/);
  assert.match(read('index.html'),/Cheese pizza on a wooden table, illustrative photograph/);
- assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['logo.webp','pizza-finishing-film.mp4','table-pizza-1100.webp','table-pizza-560.webp']);
+ assert.deepEqual(fs.readdirSync(build+'assets').filter(x=>/\.(webp|mp4)$/.test(x)).sort(), ['logo.webp','pizza-film-frames.webp','pizza-finishing-film.mp4','table-pizza-1100.webp','table-pizza-560.webp']);
  assert.ok(fs.statSync(build+'assets/pizza-finishing-film.mp4').size < 1150000);
  for(const [,srcset] of read('index.html').matchAll(/srcset="([^"]+)"/g)){
    for(const candidate of srcset.split(','))assert.ok(fs.existsSync(build+candidate.trim().split(/\s+/)[0]));
@@ -59,10 +59,15 @@ test('the five-second cover edits from the opening still to one continuous movin
  assert.match(read('styles.css'),/has-cover-motion \.cover\{position:sticky/);
 });
 
-test('touch layouts account for safe areas and allow a direct exit from the film',()=>{
+test('phone film renders in ordinary flow and has no skip-film control',()=>{
  for (const page of ['index.html','menu.html']) assert.match(read(page),/viewport-fit=cover/);
- assert.match(read('index.html'),/class="skip-cover" href="#after-cover">Skip film/);
+ assert.doesNotMatch(read('index.html'),/skip.cover|skip film/i);
+ assert.match(read('index.html'),/<canvas[^>]+data-cover-frames[^>]+aria-hidden="true"/);
  assert.match(read('styles.css'),/--mobile-dock:calc\(62px \+ env\(safe-area-inset-bottom/);
  assert.match(read('styles.css'),/orientation:landscape/);
- assert.match(read('cover-scroll.mjs'),/allowed\.matches && fits\(\)/);
+ assert.match(read('cover-scroll.mjs'),/touch\.matches \? 'frames'/);
+ assert.ok(fs.statSync(build+'assets/pizza-film-frames.webp').size < 550000);
+ assert.deepEqual(mobileFrame(0),{opacity:0,index:0});
+ assert.ok(mobileFrame(.8).index > mobileFrame(.4).index);
+ assert.deepEqual(mobileFrame(1),{opacity:1,index:MOBILE_FRAME_COUNT - 1});
 });

@@ -27,6 +27,7 @@
   <section class="cover" aria-labelledby="hero-title">
     <div class="cover-photo">
       <img class="cover-still" src="assets/table-pizza-1100.webp" srcset="assets/table-pizza-560.webp 560w, assets/table-pizza-1100.webp 1100w" sizes="(max-width: 760px) 100vw, 68vw" alt="Cheese pizza on a wooden table, illustrative photograph" width="1100" height="1254" fetchpriority="high" decoding="async">
+      <canvas class="cover-frames" data-cover-frames data-src="assets/pizza-film-frames.webp" width="320" height="384" aria-hidden="true"></canvas>
       <video class="cover-film" data-cover-film data-src="assets/pizza-finishing-film.mp4" preload="none" muted playsinline disablepictureinpicture aria-hidden="true"></video>
     </div>
     <div class="frame cover-inner">
@@ -37,10 +38,9 @@
         <div class="actions"><a class="btn light" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a><a class="cover-link" href="menu.html">Browse the menu</a></div>
       </div>
     </div>
-    <a class="skip-cover" href="#after-cover">Skip film</a>
   </section>
   </div>
-  <div class="address-strip" id="after-cover" tabindex="-1">
+  <div class="address-strip">
     <div class="frame address-inner">
       <a href="#visit"><span>Find us</span>152-59 10th Avenue</a>
       <p>Dine in, takeout &amp; delivery</p>
