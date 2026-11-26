@@ -1,7 +1,2 @@
 User-agent: *
-Allow: /
-Allow: /index.html
-Allow: /menu.html
-Allow: /styles.css
-Allow: /script.js
-Sitemap: https://cascarinospizzeria.com/sitemap.xml
+Disallow: /

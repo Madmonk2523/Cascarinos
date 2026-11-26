@@ -1,252 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Cascarino's Brick Oven Pizzeria | Whitestone, NY</title>
-    <meta name="description" content="Cascarino's Brick Oven Pizzeria in Whitestone, NY. Explore our full menu, reviews, gallery, and location details for dine-in, takeout, and delivery.">
-    <meta name="keywords" content="Cascarino's, pizzeria, Whitestone pizza, brick oven pizza, Italian restaurant, New York pizza">
-    <meta name="robots" content="index,follow,max-image-preview:large">
-    <meta name="theme-color" content="#130f0f">
-    <meta property="og:title" content="Cascarino's Brick Oven Pizzeria">
-    <meta property="og:description" content="Full menu, reviews, and brick oven favorites in Whitestone, NY.">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Cascarino's Brick Oven Pizzeria">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
-    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="225">
-    <meta property="og:image:height" content="225">
-    <meta property="og:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cascarino's Brick Oven Pizzeria">
-    <meta name="twitter:description" content="Full menu, neighborhood favorites, and authentic brick oven pizza in Whitestone.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/Madmonk2523/Cascarinos/main/logo.jpg">
-    <meta name="twitter:image:alt" content="Cascarino's Brick Oven Pizzeria logo">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="favicon.png" type="image/png" sizes="225x225">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="favicon.png" sizes="225x225">
-    <link rel="preload" href="logo.jpg" as="image" type="image/jpeg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Restaurant",
-            "name": "Cascarino's Brick Oven Pizzeria & Ristorante",
-            "servesCuisine": ["Pizza", "Italian"],
-            "priceRange": "$$",
-            "telephone": "+1-718-746-4370",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "152-59 10th Ave",
-                "addressLocality": "Whitestone",
-                "addressRegion": "NY",
-                "postalCode": "11357",
-                "addressCountry": "US"
-            },
-            "image": [
-                "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1400&q=80",
-                "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1400&q=80"
-            ],
-            "openingHours": [
-                "Mo 11:00-21:00",
-                "Tu 11:00-21:00",
-                "We 11:00-21:00",
-                "Th 11:00-21:00",
-                "Fr 11:00-21:00",
-                "Sa 11:00-21:00",
-                "Su 11:00-21:00"
-            ],
-            "hasMenu": "menu.html"
-        }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f1e4">
+<meta name="robots" content="noindex,nofollow">
+<title>Cascarino’s | Brick Oven Pizza in Whitestone</title>
+<meta name="description" content="Cascarino’s Brick Oven Pizzeria &amp; Ristorante in Whitestone, Queens. Browse pizza, pasta and Italian favorites or order pickup and delivery on Toast.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="cover-scroll.mjs"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Cascarino’s Brick Oven Pizzeria & Ristorante","telephone":"+1-718-746-4370","address":{"@type":"PostalAddress","streetAddress":"152-59 10th Avenue","addressLocality":"Whitestone","addressRegion":"NY","postalCode":"11357","addressCountry":"US"},"servesCuisine":["Pizza","Italian"],"hasMenu":"https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order"}</script>
 </head>
-<body>
-    <header class="floating-header">
-        <a class="brand" href="#home" aria-label="Go to home section">
-            <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="brand-logo" width="225" height="225" fetchpriority="high">
-        </a>
-        <nav class="top-nav" aria-label="Section navigation">
-            <a href="#home" class="story-link is-active" data-panel-link="home">Home</a>
-            <a href="#about" class="story-link" data-panel-link="about">About</a>
-            <a href="#menu" class="story-link" data-panel-link="menu">Menu</a>
-            <a href="#reviews" class="story-link" data-panel-link="reviews">Reviews</a>
-            <a href="#visit" class="story-link" data-panel-link="visit">Visit</a>
-        </nav>
-        <div class="header-actions">
-            <a class="top-cta" href="tel:+17187464370">Call to Order</a>
-            <button class="hamburger" id="mobileMenuToggle" type="button" aria-label="Open navigation" aria-controls="mobileMenu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+<body class="home-page">
+<a href="#main" class="skip">Skip to content</a>
+<header class="site-header">
+  <div class="frame header-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Cascarino’s Brick Oven Pizzeria &amp; Ristorante" width="336" height="209"></a>
+    <nav aria-label="Main navigation"><a href="menu.html">Menu</a><a href="#catering">Catering</a><a href="#visit">Visit</a></nav>
+    <a class="btn header-order" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a>
+  </div>
+</header>
+<main id="main">
+  <div class="cover-sequence" data-cover-sequence>
+  <section class="cover" aria-labelledby="hero-title">
+    <div class="cover-photo">
+      <img class="cover-still" src="assets/table-pizza-1100.webp" srcset="assets/table-pizza-560.webp 560w, assets/table-pizza-1100.webp 1100w" sizes="(max-width: 760px) 100vw, 68vw" alt="Cheese pizza on a wooden table, illustrative photograph" width="1100" height="1254" fetchpriority="high" decoding="async">
+      <canvas class="cover-frames" data-cover-frames data-src="assets/pizza-film-frames.webp" width="320" height="384" aria-hidden="true"></canvas>
+      <video class="cover-film" data-cover-film data-src="assets/pizza-finishing-film.mp4" preload="none" muted playsinline disablepictureinpicture aria-hidden="true"></video>
+    </div>
+    <div class="frame cover-inner">
+      <div class="cover-copy">
+        <p class="kicker">Whitestone, Queens</p>
+        <h1 id="hero-title">Brick oven<br> <em>pizza.</em></h1>
+        <p class="cover-deck">Cheese pies, Grandma squares and Italian favorites on 10th Avenue.</p>
+        <div class="actions"><a class="btn light" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a><a class="cover-link" href="menu.html">Browse the menu</a></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div class="address-strip">
+    <div class="frame address-inner">
+      <a href="#visit"><span>Find us</span>152-59 10th Avenue</a>
+      <p>Dine in, takeout &amp; delivery</p>
+      <a href="tel:+17187464370"><span>Call</span>(718) 746-4370</a>
+    </div>
+  </div>
 
-    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" hidden></div>
-    <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile section navigation" hidden>
-        <a href="#home" class="mobile-nav-link story-link is-active" data-panel-link="home">Home</a>
-        <a href="#about" class="mobile-nav-link story-link" data-panel-link="about">About</a>
-        <a href="#menu" class="mobile-nav-link story-link" data-panel-link="menu">Menu</a>
-        <a href="#reviews" class="mobile-nav-link story-link" data-panel-link="reviews">Reviews</a>
-        <a href="#visit" class="mobile-nav-link story-link" data-panel-link="visit">Visit</a>
-    </aside>
+  <section class="frame menu-chapter" aria-labelledby="menu-title">
+    <div class="chapter-intro">
+      <p class="kicker">The menu</p>
+      <h2 id="menu-title">From the oven<br><em>to the table.</em></h2>
+      <p>A round pie to split, a square slice or a plate of penne vodka. See what’s on the menu.</p>
+      <a class="line-link" href="menu.html">Explore the menu</a>
+    </div>
+    <div class="menu-lines">
+      <a href="menu.html#pizza"><div><h3>Pizza</h3><p>Cheese pies, Grandma squares and specialty pies.</p></div><span>See pizzas</span></a>
+      <a href="menu.html#pasta"><div><h3>Pasta &amp; entrées</h3><p>Penne vodka, baked ziti and chicken parm.</p></div><span>See pasta</span></a>
+      <a href="menu.html#starters"><div><h3>Starters</h3><p>Garlic knots, fried calamari and mozzarella sticks.</p></div><span>See starters</span></a>
+      <a href="menu.html#desserts"><div><h3>Desserts</h3><p>Cannoli, tiramisu and more.</p></div><span>See desserts</span></a>
+    </div>
+  </section>
 
-    <main class="story" id="storyRoot">
-        <section id="home" class="panel is-active" data-panel="home" aria-labelledby="home-title">
-            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
-            <div class="panel-inner">
-                <p class="kicker">Whitestone, NY</p>
-                <h1 id="home-title">Classic Brick Oven Craft, <br>Done Beautifully.</h1>
-                <p class="lede">A neighborhood favorite for brick-oven pizza, comforting Italian classics, and warm service that always feels close to home.</p>
-                <div class="actions">
-                    <a class="btn btn-solid" href="#menu">View Full Menu</a>
-                    <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
-                </div>
-                <p class="scroll-hint">Scroll to explore menu, reviews, gallery, and location</p>
-            </div>
-        </section>
+  <section class="catering" id="catering" aria-labelledby="catering-title">
+    <div class="frame catering-inner">
+      <div>
+        <p class="kicker">Catering</p>
+        <h2 id="catering-title">Pasta trays.<br><em>Heroes by the foot.</em></h2>
+        <p>Feeding a crowd? Call the shop to talk through the menu, portions and pickup.</p>
+        <a class="btn light" href="tel:+17187464370">Call about catering</a>
+      </div>
+      <div class="catering-card">
+        <p class="kicker">The catering menu</p>
+        <ul><li>Antipasti &amp; salads</li><li>Baked pasta &amp; Italian entrées</li><li>Heroes &amp; desserts</li></ul>
+      </div>
+    </div>
+  </section>
 
-        <section id="about" class="panel" data-panel="about" aria-labelledby="about-title">
-            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
-            <div class="panel-inner split">
-                <article>
-                    <p class="kicker">About The House</p>
-                    <h2 id="about-title">Old-School Warmth.<br>Intentional Craft.</h2>
-                    <p>Cascarino's brings together neighborhood comfort and brick-oven precision, serving classic New York Italian food with heart, consistency, and pride.</p>
-                    <p>From crisp, charred pies to hearty favorites made fresh each day, the experience is timeless, satisfying, and genuinely welcoming.</p>
-                </article>
-                <aside class="stat-block" aria-label="Restaurant highlights">
-                    <p><strong>Brick Oven</strong> heat for crisp texture and char.</p>
-                    <p><strong>Family Run</strong> energy and hospitality.</p>
-                    <p><strong>Fresh Daily</strong> sauces, dough, and classics.</p>
-                </aside>
-            </div>
-        </section>
-
-        <section id="menu" class="panel" data-panel="menu" aria-labelledby="menu-title">
-            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
-            <div class="panel-inner">
-                <p class="kicker">Full Menu</p>
-                <h2 id="menu-title">House Favorites and Classics</h2>
-                <div class="full-menu-grid" aria-label="Full menu sections">
-                    <article class="menu-column">
-                        <h3>Signature Pizzas</h3>
-                        <ul>
-                            <li><span>Margherita</span><strong>$14</strong></li>
-                            <li><span>Pepperoni</span><strong>$15</strong></li>
-                            <li><span>Cascarino Special</span><strong>$18</strong></li>
-                            <li><span>Veggie Delight</span><strong>$16</strong></li>
-                        </ul>
-                    </article>
-                    <article class="menu-column">
-                        <h3>Pasta and Entrees</h3>
-                        <ul>
-                            <li><span>Chicken Parmigiana</span><strong>$17</strong></li>
-                            <li><span>Eggplant Rollatine</span><strong>$16</strong></li>
-                            <li><span>Fettuccine Alfredo</span><strong>$15</strong></li>
-                            <li><span>Lasagna Bolognese</span><strong>$16</strong></li>
-                        </ul>
-                    </article>
-                    <article class="menu-column">
-                        <h3>Appetizers</h3>
-                        <ul>
-                            <li><span>Garlic Bread</span><strong>$6</strong></li>
-                            <li><span>Mozzarella Sticks</span><strong>$9</strong></li>
-                            <li><span>Calamari Fritti</span><strong>$12</strong></li>
-                            <li><span>Bruschetta</span><strong>$8</strong></li>
-                        </ul>
-                    </article>
-                    <article class="menu-column">
-                        <h3>Salads and Desserts</h3>
-                        <ul>
-                            <li><span>Classic Caesar</span><strong>$11</strong></li>
-                            <li><span>Garden Salad</span><strong>$10</strong></li>
-                            <li><span>Tiramisu</span><strong>$7</strong></li>
-                            <li><span>Panna Cotta</span><strong>$7</strong></li>
-                        </ul>
-                    </article>
-                </div>
-                <div class="actions">
-                    <a class="btn btn-solid" href="menu.html">Open Full Menu</a>
-                    <a class="btn btn-line" href="tel:+17187464370">Order By Phone</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews" class="panel" data-panel="reviews" aria-labelledby="reviews-title">
-            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
-            <div class="panel-inner">
-                <p class="kicker">Guest Reviews</p>
-                <h2 id="reviews-title">What People Say About Cascarino's</h2>
-                <div class="reviews-carousel" id="reviewsCarousel" aria-label="Customer reviews carousel">
-                    <div class="reviews-viewport">
-                        <div class="reviews-track" id="reviewsTrack" aria-live="polite">
-                            <article class="review-card review-slide is-active" data-review-index="0">
-                                <p>"Real New York pizza, always on point."</p>
-                                <h3>Jimmy D.</h3>
-                            </article>
-                            <article class="review-card review-slide" data-review-index="1">
-                                <p>"Super friendly team and the food is always fresh, hot, and delicious."</p>
-                                <h3>Sandra T.</h3>
-                            </article>
-                            <article class="review-card review-slide" data-review-index="2">
-                                <p>"My go-to spot for chicken dishes and family dinners."</p>
-                                <h3>Stephen H.</h3>
-                            </article>
-                            <article class="review-card review-slide" data-review-index="3">
-                                <p>"Great service and great slices. Highly recommended for takeout night."</p>
-                                <h3>John V.</h3>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="reviews-controls" aria-label="Carousel controls">
-                        <button class="review-nav" id="reviewsPrev" type="button" aria-label="Show previous review">Prev</button>
-                        <div class="review-dots" id="reviewDots" aria-label="Choose a review"></div>
-                        <button class="review-nav" id="reviewsNext" type="button" aria-label="Show next review">Next</button>
-                    </div>
-                    <div class="review-progress" aria-hidden="true">
-                        <span class="review-progress-bar" id="reviewProgressBar"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="visit" class="panel" data-panel="visit" aria-labelledby="visit-title">
-            <div class="panel-bg" data-bg="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=1600&amp;q=72"></div>
-            <div class="panel-inner split">
-                <article>
-                    <p class="kicker">Visit Cascarino's</p>
-                    <h2 id="visit-title">152-59 10th Ave, Whitestone</h2>
-                    <p>Open daily from 11 AM to 9 PM. Dine in, takeout, and delivery available.</p>
-                    <p>Phone: <a href="tel:+17187464370">(718) 746-4370</a></p>
-                    <div class="actions">
-                        <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=152-59+10th+Ave%2C+Whitestone%2C+NY+11357" target="_blank" rel="noopener noreferrer">Get Directions</a>
-                        <a class="btn btn-line" href="#home">Back To Top</a>
-                    </div>
-                </article>
-                <div class="faq" aria-label="Frequently searched questions">
-                    <h3>Popular Search Questions</h3>
-                    <p><strong>Do you have brick oven pizza?</strong><br>Yes, it is a house specialty.</p>
-                    <p><strong>Do you offer takeout?</strong><br>Yes, full takeout and delivery options are available.</p>
-                    <p><strong>Where are you located?</strong><br>Whitestone Plaza, 152-59 10th Ave, NY 11357.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <img src="logo.jpg" alt="Cascarino's Brick Oven Pizzeria" class="footer-logo" width="225" height="225" loading="lazy" decoding="async">
-        <p>152-59 10th Ave, Whitestone, NY 11357 | (718) 746-4370</p>
-    </footer>
-
-    <script src="script.js" defer></script>
+  <section class="frame visit" id="visit" aria-labelledby="visit-title">
+    <div class="visit-mark" aria-hidden="true"><span>152-59</span><span>10th Avenue</span></div>
+    <div>
+      <p class="kicker">Visit Cascarino’s</p>
+      <h2 id="visit-title">On 10th Avenue.</h2>
+      <address>152-59 10th Avenue<br>Whitestone, NY 11357</address>
+      <p>See Toast for current pickup and delivery hours. Call for dine-in and holiday hours.</p>
+      <div class="actions"><a class="btn outline" href="https://www.google.com/maps/search/?api=1&amp;query=Cascarinos+152-59+10th+Ave+Whitestone+NY+11357">Get directions</a><a class="line-link" href="tel:+17187464370">(718) 746-4370</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="frame footer-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Cascarino’s" width="336" height="209" loading="lazy"></a>
+    <p>Brick Oven Pizzeria &amp; Ristorante<br>Whitestone, Queens</p>
+    <nav aria-label="More information"><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><a href="photography.html">Photo credit</a></nav>
+  </div>
+</footer>
+<div class="mobile-tools" aria-label="Quick actions"><a href="tel:+17187464370">Call</a><a class="btn" href="https://toast.app/r/cascarinos-brick-oven-pizzeria-ristorante-152-59-10th-ave/order">Order online</a></div>
 </body>
 </html>
